@@ -15,6 +15,8 @@ h1, p {
 
 #main {
   margin-top: 1.9%;
+  box-shadow: 0px 0px 0px 3px white inset;
+  padding: 0;
 }
 
 #main h1 {
@@ -23,7 +25,6 @@ h1, p {
 
 #content {
   text-align: center;
-  box-shadow: 0px 0px 0px 3px white inset;
   height: 500px;
 }
 
