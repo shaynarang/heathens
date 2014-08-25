@@ -1,8 +1,3 @@
 $("#content").hide();
- <% if @section != "landing" %>
-  $("#content").css("padding", "7%");
-<% else %>
-  $("#content").css("padding", "0");
-<% end %>
 $("#content").html("<%= escape_javascript(render partial: @section) %>"); 
-$("#content").fadeIn();
+$("#content").fadeIn('fast');

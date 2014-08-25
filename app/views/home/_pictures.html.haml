@@ -1,5 +1,10 @@
-%div#pictures_content
+#pictures_content
 
   %h1 Pictures
 
-  %p Donec porttitor ipsum dui, eget semper dolor elementum sit amet. Nunc iaculis sapien a orci consectetur iaculis. Ut tincidunt suscipit lectus ac mollis. Praesent sapien risus, placerat vitae pellentesque in, dapibus eu magna.
+  - 3.times do
+    .row
+      - 4.times do
+        .picture.col-md-3.col-sm-12
+          = image_tag "http://placehold.it/75x20"
+    %br
