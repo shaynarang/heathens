@@ -16,6 +16,7 @@ h1, p {
 
 #main {
   margin-top: 1%;
+  margin-bottom: 3%;
   border-top: 5px solid white;
   padding: 0;
   background: rgba(240, 255, 240, 0.4);
@@ -31,24 +32,19 @@ h1, p {
   border-radius: 5px;
 }
 
-#content {
-  height: 480px;
-}
-
 #content img {
   width: 100%;
   height: 538px;
 }
 
 nav {
-  margin-top: 1%;
   margin-bottom: 3%;
   text-align: center;
 }
 
 nav ul {
   text-align: right;
-  padding-top: 1%;
+  padding-top: 0%;
 }
 
 nav li {
@@ -77,7 +73,7 @@ nav img {
 }
 
 #heading h1 {
-  margin-top: 6.5%;
+  margin-top: 3%;
   color: white;
   letter-spacing: 20px;
   text-align: left;
@@ -105,6 +101,7 @@ nav img {
   display: inline-block;
   border-top: 2px solid white;
   padding: 2%;
+  cursor: pointer;
 }
 
 .post_heading{
@@ -117,7 +114,7 @@ nav img {
 }
 
 #bio_content, #contact_content, #music_content, #pictures_content, #videos_content, #words_content{
-  padding: 0 5%;
+  padding: 0 5% 5% 5%;
 }
 
 @media only screen 
