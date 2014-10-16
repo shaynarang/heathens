@@ -88,10 +88,26 @@ nav img {
   margin-bottom: 25px;
 }
 
+.post{
+  display: inline-block;
+  border: 2px solid white;
+  margin-bottom: 2%;
+  padding: 2%;
+}
+
+.post_heading{
+  text-align: center;
+}
+
+.post_content{
+  display: none;
+  margin-top: 2%;
+}
+
 @media (min-width: 320px) and (max-width: 720px) {
 
   #heading h1 {
-    font-size: 230%;
+    font-size: 160%;
   }
 
   nav {
