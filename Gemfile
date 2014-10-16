@@ -14,6 +14,8 @@ gem 'figaro'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'fog'
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
