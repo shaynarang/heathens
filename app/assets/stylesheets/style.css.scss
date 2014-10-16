@@ -15,14 +15,23 @@ h1, p {
 }
 
 #main {
-  margin-top: 1.9%;
+  margin-top: 1%;
   border-top: 5px solid white;
   padding: 0;
+  background: rgba(240, 255, 240, 0.4);
 }
 
 #main h1 {
   font-size: 200%;
-  margin-top: 4%;
+  background: #d8e7e1;
+  padding: 2% 2% 1.5% 2%;
+  width: 20%;
+  margin: 4% auto;
+  border-radius: 5px;
+}
+
+#content {
+  height: 480px;
 }
 
 #content img {
@@ -34,9 +43,31 @@ nav {
   margin-top: 1%;
   margin-bottom: 3%;
   text-align: center;
-  box-shadow: 0px 0px 0px 3px black inset;
-  background: rgba(240, 255, 240, 0.4);
-  background-image: url('backgrounds/minty_paper.jpg');
+}
+
+nav ul {
+  text-align: right;
+  padding-top: 1%;
+}
+
+nav li {
+  text-align: center;
+  list-style-type: none;
+  display: inline-block;
+  width: 15%;
+  box-shadow: rgba(0,0,0,0.7) 0px 2px 6px, inset rgba(0,0,0,0.9) 0px -1px 2px;
+  background: #dbe7e1;
+  border-radius: 5px;
+}
+
+nav img {
+  padding: 3%;
+  width: 75%;
+}
+
+.highlight {
+  box-shadow: rgba(0,0,0,0.1) 0px 1px 1px, inset 0 0 12px #b7d0c4;
+  background: #f7faf9;
 }
 
 #heading, h1 {
@@ -45,18 +76,12 @@ nav {
 }
 
 #heading h1 {
+  margin-top: 6.5%;
   color: white;
   letter-spacing: 20px;
   text-align: left;
   font-weight: bold;
   font-size: 340%;
-  vertical-align: middle;
-}
-
-#content h1{
-  margin-bottom: 2%;
-  text-transform: uppercase;
-  font-weight: bold;
 }
 
 #heading a {
@@ -64,23 +89,10 @@ nav {
   color: white;
 }
 
-nav ul {
-  padding: 2% 0;
-}
-
-nav li {
-  list-style-type: none;
-  display: inline-block;
-  width: 15%;
-}
-
-nav img {
-  width: 50%;
-}
-
-.highlight {
-  box-shadow: 0px 0px 0px 2px black inset;
-  background: white;
+#content h1{
+  margin-bottom: 2%;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 #pictures_content img{
@@ -90,8 +102,7 @@ nav img {
 
 .post{
   display: inline-block;
-  border: 2px solid white;
-  margin-bottom: 2%;
+  border-top: 2px solid white;
   padding: 2%;
 }
 
@@ -104,15 +115,84 @@ nav img {
   margin-top: 2%;
 }
 
-@media (min-width: 320px) and (max-width: 720px) {
+#bio_content, #contact_content, #music_content, #pictures_content, #videos_content, #words_content{
+  padding: 0 5%;
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+  #heading h1{
+    font-size: 280%;
+  }
+
+  #main h1{
+    width: 30%;
+  }
+}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+  #heading h1{
+    font-size: 600%;
+  }
+
+  nav ul{
+    text-align: left;
+    margin: auto;
+    padding: 0;
+  }
+
+  nav li {
+    width: 16%;
+  }
+
+  #main h1{
+    font-size: 140%;
+    width: 100%;
+  }
+}
+
+@media only screen 
+and (min-device-width : 569px) 
+and (max-device-width : 767px) {
+  #heading h1{
+    font-size: 800%;
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 568px) {
+  #nav_column{
+    padding: 1% 0;
+    margin: 0;
+  }
+
+  #content_column{
+    padding: 10% 0 0 0;
+    margin: 0;
+  }
 
   #heading h1 {
     font-size: 160%;
   }
 
+  #main h1{
+    font-size: 140%;
+    width: 100%;
+  }
+
   nav {
     box-shadow: none;
     margin: 4% 0;
+  }
+
+  nav ul{
+    float: left;
+    margin: auto;
+    padding: 0;
   }
 
   nav li {
@@ -130,9 +210,4 @@ nav img {
   #main {
     border-top: 3px solid white;
   }
-
-  #content {
-    margin-top: 7%;
-  }
-
 }

@@ -4,7 +4,7 @@ class HomeController < ApplicationController
 
   def display_content
     @galleries = Gallery.all
-    @posts = Post.all
+    @posts = Post.order('created_at DESC').all
     @section = params[:section]
     respond_to do |format|
       format.js

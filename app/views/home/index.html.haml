@@ -1,10 +1,10 @@
 #wrapper
   .row
-    .col-md-6.col-sm-12
+    .col-md-5.col-sm-12
       #heading
         %h1 
           = link_to "HEATHENS", display_content_path(:section => "landing"), :remote => true
-    .col-md-6.col-sm-12
+    .col-md-7.col-sm-12#nav_column
       %nav
         %ul
           - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
@@ -12,7 +12,7 @@
             %li
               = link_to image_tag("icons/#{category}.png", id: "#{category}_icon"), display_content_path(:section => "#{category}"), :remote => true
 
-  .col-md-12.col-sm-12
+  .col-md-12.col-sm-12#content_column
     .row#main
       #content
         #landing_image
