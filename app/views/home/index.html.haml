@@ -10,10 +10,10 @@
           - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
           - categories.each do |category|
             %li
-              = link_to image_tag("#{category}.png", id: "#{category}_icon"), display_content_path(:section => "#{category}"), :remote => true
+              = link_to image_tag("icons/#{category}.png", id: "#{category}_icon"), display_content_path(:section => "#{category}"), :remote => true
 
   .col-md-12.col-sm-12
     .row#main
       #content
         #landing_image
-          = image_tag 'heathens_promo.png'
+          = image_tag 'promo/heathens_landing.jpg'

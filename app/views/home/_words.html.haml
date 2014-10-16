@@ -2,4 +2,8 @@
 
   %h1 Words
 
-  %p Mauris faucibus iaculis erat. Suspendisse magna leo, auctor in sem eu, commodo placerat lacus. Morbi semper, arcu nec adipiscing consectetur, urna tellus hendrerit ipsum, quis tempus metus libero id augue. Donec porttitor ipsum dui, eget semper dolor elementum sit amet. Nunc iaculis sapien a orci consectetur iaculis.
+  - @posts.each do |post|
+    - post.images.each do |image|
+      %p
+        = image_tag(image.content.url)
+    %p= post.content

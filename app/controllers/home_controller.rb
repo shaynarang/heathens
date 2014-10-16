@@ -3,6 +3,8 @@ class HomeController < ApplicationController
   end
 
   def display_content
+    @galleries = Gallery.all
+    @posts = Post.all
     @section = params[:section]
     respond_to do |format|
       format.js

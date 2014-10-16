@@ -2,9 +2,8 @@
 
   %h1 Pictures
 
-  - 3.times do
-    .row
-      - 4.times do
-        .picture.col-md-3.col-sm-12
-          = image_tag "http://placehold.it/75x20"
+  - @galleries.each do |gallery|
+    - gallery.images.each do |image|
+      .col-md-4.col.sm-12
+        = image_tag(image.content.medium.url)
     %br
