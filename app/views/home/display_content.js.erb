@@ -1,3 +1,6 @@
 $("#content").hide();
 $("#content").html("<%= escape_javascript(render partial: @section) %>"); 
+<%- if @section == "landing" %>
+  $('nav li').removeClass('highlight');
+<% end %>
 $("#content").fadeIn('fast');
