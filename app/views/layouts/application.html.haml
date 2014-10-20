@@ -1,0 +1,18 @@
+!!!
+%html
+  %head
+    %title Heathens
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
+    = csrf_meta_tags
+  %body
+    - if notice
+      .row.col-md-12.col-sm-12.col-xs-12
+        .notice
+          = notice
+    - if alert
+      .row.col-md-12.col-sm-12.col-xs-12
+        .alert
+          = alert
+    = yield

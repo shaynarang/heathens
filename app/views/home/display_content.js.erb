@@ -1,3 +1,4 @@
+$('.notice, .alert').hide();
 $("#content").hide();
 $("#content").html("<%= escape_javascript(render partial: @section) %>"); 
 <%- if @section == "landing" %>

@@ -16,6 +16,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'active_attr'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'

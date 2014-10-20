@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   root 'home#index'
   get 'display_content', to: 'home#display_content'
+  post 'create_message', to: 'messages#create'
 end

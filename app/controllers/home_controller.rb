@@ -3,6 +3,7 @@ class HomeController < ApplicationController
   end
 
   def display_content
+    @message = Message.new
     @galleries = Gallery.all
     @posts = Post.order('created_at DESC').all
     @section = params[:section]
