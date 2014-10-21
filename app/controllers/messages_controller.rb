@@ -7,10 +7,15 @@ class MessagesController < ApplicationController
     @message = Message.new(params[:message])
     if @message.valid?
       MessageMailer.new_message(@message).deliver
-      redirect_to root_url, notice: "Thank you for contacting me. I will be in touch."
+      notice = "Thank you for contacting us. We will be in touch."
+      section = "home/landing"
     else
-      error_message = @message.errors.full_messages.to_sentence.downcase.capitalize
-      redirect_to contact_path, notice: error_message + "!"
+      section = "home/contact"
+    end
+
+    respond_to do |format|
+      flash[:notice] = notice if notice
+      format.js { render "create", :locals => { section: section } }
     end
   end
 end

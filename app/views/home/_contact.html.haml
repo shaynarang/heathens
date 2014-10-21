@@ -1,25 +1,33 @@
 #contact_content
   %h1 Contact
   #contact_form
-    = form_for @message, url: {controller: "messages", action: "create"}, method: "post" do |f|
+    = form_for @message, url: {controller: "messages", action: "create"}, method: "post", :remote => true do |f|
       .col-md-12.col-sm-12.col-xs-12.contact_row
         .field
           = f.label :name
+          - if @message.errors[:name]
+            = @message.errors[:name].to_sentence.downcase.capitalize
           %br
           = f.text_field :name
       .col-md-12.col-sm-12.col-xs-12.contact_row
         .field
           = f.label :email
+          - if @message.errors[:email]
+            = @message.errors[:email].to_sentence.downcase.capitalize
           %br
           = f.text_field :email
       .col-md-12.col-sm-12.col-xs-12.contact_row
         .field
           = f.label :subject
+          - if @message.errors[:subject]
+            = @message.errors[:subject].to_sentence.downcase.capitalize
           %br
           = f.text_field :subject, :value => params[:subject]
       .col-md-12.col-sm-12.col-xs-12.contact_row
         .field
           = f.label :content, "Message"
+          - if @message.errors[:content]
+            = @message.errors[:content].to_sentence.downcase.capitalize
           %br
           = f.text_area :content
         .actions= f.submit "Send Message", :id => "contact_form_submit_button", :value => "Send"
