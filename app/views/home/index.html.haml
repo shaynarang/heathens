@@ -1,5 +1,9 @@
 #wrapper
   .row
+    .col-md-12.col-sm-12.col-xs-12#audio_container
+      #audio_player
+        = render 'audio_player'
+  .row
     .col-md-5.col-sm-12
       #heading
         %h1 
@@ -16,4 +20,4 @@
     .row#main
       #content
         #landing_image
-          = image_tag 'promo/heathens_landing.jpg'
+          = image_tag @random_image_url
