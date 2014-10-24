@@ -1,20 +1,22 @@
 #wrapper
   .row
-    .col-md-12.col-sm-12.col-xs-12#audio_container
+    .col-md-12.col-sm-12.col-xs-12
       #audio_player
         = render 'audio_player'
+
   .row
-    .col-md-5.col-sm-12
-      #heading
-        %h1 
-          = link_to "HEATHENS", display_content_path(:section => "landing"), :remote => true
-    .col-md-7.col-sm-12#nav_column
-      %nav
-        %ul
-          - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
-          - categories.each do |category|
-            %li
-              = link_to image_tag("icons/#{category}.png", id: "#{category}_icon"), display_content_path(:section => "#{category}"), :remote => true
+    .col-md-12.col-sm-12.col-xs-12#heading_row
+      .col-md-5.col-sm-12
+        #heading
+          %h1
+            = link_to "HEATHENS", display_content_path(:section => "landing"), :remote => true
+      .col-md-7.col-sm-12#nav_column
+        %nav
+          %ul
+            - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
+            - categories.each do |category|
+              %li
+                = link_to image_tag("icons/#{category}.png", id: "#{category}_icon"), display_content_path(:section => "#{category}"), :remote => true
 
   .col-md-12.col-sm-12#content_column
     .row#main
