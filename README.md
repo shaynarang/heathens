@@ -6,13 +6,13 @@ This is a web application for my band, Heathens.
 <ol>
 <li> User can view Bio, Music, Videos, Words, Pictures, and Contact pages </li>
 <li> User can contact band via form on Contact page (currently using ActionMailer)  </li>
+<li> User can listen to audio seemlessly while navigating application </li>
 <li> Admin can create, update, and destroy posts via admin section (currently using ActiveAdmin) </li> 
 <li> User can comfortably access application via tablet and mobile devices </li>
 </ol>
 
 ##To Do:
 <ul>
-<li> Add music player </li>
 <li> Add image viewer </li>
 <li> Add video viewer </li>
 <li> Refactor </li>
@@ -25,13 +25,9 @@ This is a web application for my band, Heathens.
   * Ruby 2.1.2
   * PostgreSQL 9.3.4
 
-### Project Setup
-  1. Install things in the tool chain
-  2. Run `bundle`
-  3. Create config/database.yml for your particular setup (there is an example file: config/database.example.yml)
-  4. Create config/application.yml for your particular setup (there is an example file: config/application.example.yml)
-  5. Run `rake db:create:all` and `rake db:migrate` to set up your database
-  6. Run `rake` and confirm that all of the tests are passing for you
+## Additional Information
+
+A special thank you to Jack Whitis (https://github.com/jwhitis/). I referenced and used much of his code when implementing the audio player.
 
 ##Author:
 
