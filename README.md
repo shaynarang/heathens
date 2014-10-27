@@ -5,16 +5,17 @@ This is a web application for my band, Heathens.
 ## Features:
 <ol>
 <li> User can view Bio, Music, Videos, Words, Pictures, and Contact pages </li>
-<li> User can contact band via form on Contact page (currently using ActionMailer)  </li>
+<li> User can contact band via form on Contact page (using ActionMailer)  </li>
 <li> User can listen to audio seemlessly while navigating application </li>
-<li> Admin can create, update, and destroy posts via admin section (currently using ActiveAdmin) </li> 
-<li> User can comfortably access application via tablet and mobile devices </li>
+<li> Admin can create, update, and destroy posts via admin section (using ActiveAdmin) </li> 
+<li> User can access application via tablet and mobile devices (using Bootstrap and media queries) </li>
 </ol>
 
 ##To Do:
 <ul>
 <li> Add image viewer </li>
 <li> Add video viewer </li>
+<li> Optimize layout for mobile devices </li>
 <li> Refactor </li>
 </ul>
 
