@@ -1,0 +1,19 @@
+require 'rails_helper'
+
+RSpec.describe "pictures" do
+  before(:each) do
+    first_image = FactoryGirl.create(:image)
+    second_image = FactoryGirl.create(:image, content: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'photos', 'test2.jpg')))
+    visit "/"
+    gallery = FactoryGirl.create(:gallery)
+    gallery.images << first_image
+    gallery.images << second_image
+    find("li > a > img#pictures_icon").click
+  end
+    
+  it "populates the content section with image content", :js => true do
+    expect(page).to have_content("PICTURES")
+    expect(page).to have_selector("img[alt=\"Medium test\"]")
+    expect(page).to have_selector("img[alt=\"Medium test2\"]")
+  end
+end
