@@ -36,6 +36,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
+  gem 'guard-rspec', require: false
 end
 
 group :production do
