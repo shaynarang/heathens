@@ -52,4 +52,7 @@ Rails.application.configure do
     user_name: ENV["GMAIL_USERNAME"],
     password: ENV["GMAIL_PASSWORD"]
   }
+
+  # Add Rack::LiveReload to the bottom of the middleware stack with the default options.
+  config.middleware.use Rack::LiveReload
 end

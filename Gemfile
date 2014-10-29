@@ -37,6 +37,8 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'guard-rspec', require: false
+  gem 'guard-livereload', require: false
+  gem "rack-livereload", :group => :development
 end
 
 group :production do
