@@ -102,6 +102,8 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    fancybox-rails (0.2.1)
+      railties (>= 3.1.0)
     ffi (1.9.6)
     figaro (0.7.0)
       bundler (~> 1.0)
@@ -335,6 +337,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  fancybox-rails
   figaro
   fog
   guard-livereload

@@ -17,4 +17,5 @@
 //= require jquery.jplayer.min
 //= require jplayer.playlist.min
 //= require jplayer.js
+//= require fancybox
 //= require_tree .

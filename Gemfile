@@ -19,6 +19,7 @@ gem 'fog'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_attr'
+gem 'fancybox-rails'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
