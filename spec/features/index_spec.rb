@@ -24,10 +24,12 @@ RSpec.describe "index" do
     expect(page).to have_selector("div#audio_controls > div#next")
     expect(page).to have_selector("div#audio_controls > div#play_circle")
     expect(page).to have_selector("div#audio_controls > div#prev")
+    expect(page).to have_selector("#my-jplayer.jp-jplayer")
   end
 
   it "displays the current song", :js => true do
-    expect(page).to have_content("Now Playing: Sample Track 1 by Emancipator")
+    expect(page).to have_selector("#now-playing")
+    expect(page).to have_content("Now Playing:")
   end
 
   it "refreshes the landing image when the header is clicked", :js => true do
