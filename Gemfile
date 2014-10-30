@@ -34,6 +34,7 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'capybara'
+  gem 'poltergeist'
   gem 'selenium-webdriver'
   gem 'database_cleaner'
   gem 'guard-rspec', require: false
