@@ -36,9 +36,4 @@ RSpec.describe "index" do
     find("div#heading > h1").click
     expect(page).to have_selector("img#landing_image[alt=\"Large test\"]")
   end
-
-  it "refreshes the landing image when the landing image is clicked", :js => true do
-    find("img#landing_image[alt=\"Large test\"]").click
-    expect(page).to have_selector("img#landing_image[alt=\"Large test\"]")
-  end
 end
