@@ -1,25 +1,11 @@
 $(document).ready(function() {
 
-  function scrollToSection(section_id){
-    section = "#" + section_id
-    $('html, body').animate({
-      scrollLeft: $(section).offset().left,
-      scrollTop: $(section).offset().top
-    }, 1400);
-  }
-
-  function addOutline(element){
+  function highlight(element){
     $('nav li').removeClass('highlight');
     $(element).addClass('highlight');
   }
 
-
   $('nav li img').click(function(event) {
-    addOutline($(this).parent().parent());
-    // child = $(this).children();
-    // var section_id = $(child).attr( "id").slice(0, -4)
-    // var section_id = section_id + "section"
-    // scrollToSection(section_id)
+    highlight($(this).parent().parent());
   });
-
 });
