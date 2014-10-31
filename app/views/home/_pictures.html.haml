@@ -5,5 +5,12 @@
   - @galleries.each do |gallery|
     - gallery.images.each do |image|
       .col-md-4.col.sm-12
-        = image_tag(image.content.medium.url)
+        %a.fancybox{:href => image.content.large.url}
+          = image_tag(image.content.medium.url)
     %br
+
+:javascript
+
+  jQuery(function() {
+    $("a.fancybox").fancybox({'padding': 0, overlayOpacity: 0.8, overlayColor: '#000000'});
+  });
