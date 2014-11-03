@@ -1,13 +1,12 @@
-Image.destroy_all
-Gallery.destroy_all
-Post.destroy_all
+promo_gallery = Gallery.create(name: "Promo Images") unless Gallery.find_by_name("Promo Images")
 
-promo_gallery = Gallery.create(name: "Promo Images")
 Dir.foreach('app/assets/images/promo') do |file_name|
   next if file_name == '.' or file_name == '..' or file_name == ".DS_Store"
   promo_image = File.open("app/assets/images/promo/#{file_name}")
-  promo_gallery.images.create(content: promo_image)
+  promo_gallery.images.create(content: promo_image) unless Image.find_by_content(file_name)
 end
+
+Post.destroy_all
 
 posts = [
   {author: "Shay", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec risus mattis, suscipit magna eget, suscipit augue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam aliquam commodo lacus in varius. In ac magna nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ullamcorper ipsum nec tellus maximus cursus. Etiam et metus facilisis, suscipit tellus quis, rhoncus dolor. Etiam consectetur sed purus lobortis pellentesque. Curabitur a sollicitudin libero, ut efficitur dui.", title: "Dolor sit", categories: ["news"] },
