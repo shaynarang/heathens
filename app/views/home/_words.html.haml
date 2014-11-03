@@ -2,18 +2,16 @@
 
   %h1 Words
 
-  - @posts.each do |post|
-    .post.col-md-12.col-sm-12.col-xs-12{onclick: "displayPostContent('#{post.title.gsub(/\s+/, "")}')"}
-      .post_heading
-        .col-md-4.col-sm-4.col-sm-12
-          = post.created_at.strftime("%d %b %y")
-        .col-md-4.col-sm-4.col-xs-12
-          = post.title
-        .col-md-4.col-sm-4.col-xs-12
-          = post.author
-      .col-md-12.col-sm-12.col-xs-12
-        .post_content{id: "#{post.title.gsub(/\s+/, "")}"}
-          = post.content
+  #categories.col-md-12.col-sm-12.col-xs-12
+    .col-md-2.col-sm-2.col-xs-12
+      Filter by Category:
+    .col-md-10.col-sm-10.col-xs-12
+      - @categories.each do |category|
+        = link_to category, filter_posts_path(:categories => category), :id => "#{category}_link", :remote => true
+      = link_to "All", filter_posts_path(:categories => "all"), :id => "all_link", :remote => true
+
+  #posts
+    = render 'posts', :posts => @posts
 
 :javascript
 
