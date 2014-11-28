@@ -117,6 +117,7 @@ nav img {
 #pictures_content img{
   height: 200px;
   margin-bottom: 25px;
+  border: 3px solid black;
 }
 
 #fancybox-close {
@@ -126,6 +127,10 @@ nav img {
 
 .fancybox-bg {
   display:none;
+}
+
+#fancybox-img {
+  border: 5px solid black;
 }
 
 .post{
