@@ -6,7 +6,6 @@ html {
 
 body {
   background: #d8e7e1;
-  height: 720px;
 }
 
 #wrapper {
@@ -155,27 +154,19 @@ nav img {
 #contact_form input, #contact_form #message_content{
   margin-bottom: 2%;
   width: 100%;
-  font-family: 'Syncopate', sans-serif;
   height: 40px;
   font-size: 150%;
-  border: 5px solid #fff;
-  -webkit-box-shadow:
-    inset 0 0 8px  rgba(0,0,0,0.1),
-          0 0 16px rgba(0,0,0,0.1);
-  -moz-box-shadow:
-    inset 0 0 8px  rgba(0,0,0,0.1),
-          0 0 16px rgba(0,0,0,0.1);
-  box-shadow:
-    inset 0 0 8px  rgba(0,0,0,0.1),
-          0 0 16px rgba(0,0,0,0.1);
+  border: 1px solid #b7d0c4;
   padding: 15px;
-  background: rgba(255,255,255,0.5);
+  background: #f7faf9;
   margin: 0 0 10px 0;
+  border-radius: 0px;
 }
 
 #contact_form input:focus, #contact_form #message_content:focus{
   outline: 0;
-  border: solid 5px #969696;
+  border: solid 3px #b7d0c4;
+  box-shadow: none;
 }
 
 #contact_form #message_content{
@@ -188,14 +179,13 @@ nav img {
 }
 
 #contact_form .actions input{
-  border: none;
+  border: 2px solid black;
   box-shadow: none;
-  font-family: 'Syncopate', sans-serif;
-  font-size: 120%;
   height: 50px;
   margin: 5% 0 15% 0;
-  color: #fff;
-  background: #969696;
+  color: black;
+  font-weight: normal;
+  background: #89b29e;
 }
 
 .notice, .alert {
@@ -333,10 +323,6 @@ and (max-device-width : 767px) {
     margin-bottom: 0%;
   }
 
-  #main {
-    padding-top: 3%;
-  }
-
   #main h1{
     font-size: 200%;
     width: 100%;
@@ -346,7 +332,7 @@ and (max-device-width : 767px) {
 
   nav {
     margin-top: 0%;
-    padding-bottom: 18%;
+    padding-bottom: 25%;
   }
 
   nav ul{
@@ -360,15 +346,21 @@ and (max-device-width : 767px) {
   }
 
   .highlight {
-    border: none;
+    border: 1px solid black;
   }
 
   nav img {
-    width: 80%;
+    height: 48px;
+    width: 100%;
+  }
+
+  #bio_content, #contact_content, #music_content, #pictures_content, #videos_content, #words_content {
+    padding-top: 3%;
   }
 
   .picture {
     margin-top: 5%;
+    border: 1px solid black;
   }
 
   .fancybox {
@@ -396,5 +388,16 @@ and (max-device-width : 767px) {
   #audio_controls {
     width: 60%;
     margin: auto;
+  }
+
+  #contact_form .actions input {
+    width: 175%;
+    margin-left: -40%;
+    font-size: 100%;
+    height: 90%;
+  }
+
+  #content img {
+    height: 200px;
   }
 }

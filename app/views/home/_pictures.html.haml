@@ -4,7 +4,7 @@
 
   - @galleries.each do |gallery|
     - gallery.images.each do |image|
-      .col-md-4.col.sm-12
+      .col-md-4.col-sm-4.col-xs-12
         %a.fancybox{:href => image.content.large.url}
           = image_tag(image.content.medium.url)
     %br
