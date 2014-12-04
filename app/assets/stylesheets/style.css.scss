@@ -11,6 +11,7 @@ body {
 #wrapper {
   width: 80%;
   margin: 0 auto;
+  padding: 1% 0;
 }
 
 h1, p {
@@ -29,7 +30,7 @@ h1, p {
 #audio_row {
   background: #89b29e;
   color: #f7faf9;
-  padding: 2%;
+  padding: 1%;
   border-top: 5px solid black;
 }
 
@@ -56,16 +57,14 @@ h1, p {
 }
 
 #heading_row {
-  padding-bottom: 1%;
   background: #b7d0c4;
   border-top: 5px solid black;
   border-bottom: 5px solid black;
 }
 
 nav {
-  margin-bottom: 3%;
   text-align: center;
-  margin-top: 7%;
+  margin-top: 4%;
 }
 
 nav ul {
@@ -98,7 +97,7 @@ nav img {
   text-align: center;
   font-weight: bold;
   font-size: 440%;
-  padding: 4%;
+  padding: 1% 4%;
 }
 
 #heading a {
@@ -312,6 +311,7 @@ and (max-device-width : 767px) {
 @media (min-width: 320px) and (max-width: 568px) {
   #wrapper {
     width: 100%;
+    padding-top: 0;
   }
 
   #heading_row, #audio_row, #main {
@@ -331,7 +331,7 @@ and (max-device-width : 767px) {
   }
 
   nav {
-    margin-top: 0%;
+    margin-top: 1%;
     padding-bottom: 25%;
   }
 
@@ -356,6 +356,7 @@ and (max-device-width : 767px) {
 
   #bio_content, #contact_content, #music_content, #pictures_content, #videos_content, #words_content {
     padding-top: 3%;
+    padding-left: 8%;
   }
 
   .picture {
@@ -399,5 +400,9 @@ and (max-device-width : 767px) {
 
   #content img {
     height: 200px;
+  }
+
+  #category_filter_links {
+    margin: 5% 0 2% 0;
   }
 }
