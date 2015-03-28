@@ -8,7 +8,7 @@ RSpec.describe "pictures" do
     gallery.images << first_image
     gallery.images << second_image
     visit "/"
-    find("li > a > img#pictures_icon").click
+    find("li > a#pictures_link").click
   end
     
   it "populates the content section with image content", :js => true do

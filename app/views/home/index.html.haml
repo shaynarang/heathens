@@ -1,24 +1,23 @@
 #wrapper
-  .row#audio_row
-    .col-md-12.col-sm-12.col-xs-12
-      #audio_player
-        = render 'audio_player'
-
+  - 5.times do
+    %br
   .row#heading_row
     .col-md-12.col-sm-12.col-xs-12
-      .col-md-5.col-sm-12
-        #heading
-          %h1
-            = link_to "HTHNS", display_content_path(:section => "landing"), :remote => true
-      .col-md-7.col-sm-12#nav_column
-        %nav
-          %ul
-            - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
-            - categories.each do |category|
-              %li
-                = link_to image_tag("icons/#{category}.png", id: "#{category}_icon"), display_content_path(:section => "#{category}"), :remote => true
 
-  .row#main
-    .col-md-12.col-sm-12.col-xs-12#content_column
+  .row
+    .col-md-2.col-sm-12#nav_column
+      %nav
+        %ul
+          - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
+          - categories.each do |category|
+            %li
+              = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true
+
+    #main.col-md-10.col-sm-12.col-xs-12#content_column
       #content
         = image_tag @random_image_url, id: "landing_image"
+
+  .row
+    #audio_row{style: 'border-top: 1px dotted white'}
+      #audio_player
+        = render 'audio_player'

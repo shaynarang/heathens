@@ -10,13 +10,13 @@ RSpec.describe "index" do
     expect(page).to have_selector("img#landing_image[alt=\"Large test\"]")
   end
 
-  it "displays navigation icons" do
-    expect(page).to have_selector("li > a > img#bio_icon")
-    expect(page).to have_selector("li > a > img#music_icon")
-    expect(page).to have_selector("li > a > img#videos_icon")
-    expect(page).to have_selector("li > a > img#words_icon")
-    expect(page).to have_selector("li > a > img#pictures_icon")
-    expect(page).to have_selector("li > a > img#contact_icon")
+  it "displays navigation links" do
+    expect(page).to have_selector("li > a#bio_link")
+    expect(page).to have_selector("li > a#music_link")
+    expect(page).to have_selector("li > a#videos_link")
+    expect(page).to have_selector("li > a#words_link")
+    expect(page).to have_selector("li > a#pictures_link")
+    expect(page).to have_selector("li > a#contact_link")
   end
 
   it "displays an audio player" do
@@ -29,11 +29,6 @@ RSpec.describe "index" do
 
   it "displays the current song", :js => true do
     expect(page).to have_selector("#now-playing")
-    expect(page).to have_content("Now Playing:")
-  end
-
-  it "refreshes the landing image when the header is clicked", :js => true do
-    find("div#heading > h1").click
-    expect(page).to have_selector("img#landing_image[alt=\"Large test\"]")
+    expect(page).to have_content("NOW PLAYING:")
   end
 end

@@ -4,11 +4,11 @@ RSpec.describe "bio" do
   before(:each) do
     FactoryGirl.create(:image)
     visit "/"
-    find("li > a > img#bio_icon").click
+    find("li > a#bio_link").click
   end
     
   it "populates the content section with bio content", :js => true do
     expect(page).to have_content("BIO")
-    expect(page).to have_content("Integer blandit magna a nulla mattis elementum. Pellentesque quis dignissim nunc. Phasellus tempor mi ac augue cursus, et mollis purus facilisis. Nunc lobortis sagittis hendrerit. Nam id luctus tellus. Nulla pharetra nec risus ut condimentum. Ut interdum leo eu orci sagittis lacinia. Nulla vitae nisl id dui laoreet convallis.")
+    expect(page).to have_content("IF ONE COULD LIKEN THE COMBINATION OF LUSH ELECTRONIC SYNTH TONES AND CATCHY POP MELODIES TO A BABY, THE SOUND OF HTHNS COULD REASONABLY BE DESCRIBED AS SAID BABY PUNCHING YOU IN THE FACE. HTHNS IS AN ELECTRONIC ROCK DUO BASED OUT OF NASHVILLE, TN. FORMED IN 2014, THE DUO ASSIMILATES ATMOSPHERIC, MELODIC, AND SONGWRITING ELEMENTS PREVALENT IN MODERN COMMERCIAL MUSIC WITH DARK, FUZZY, AND QUIRKY TONES, PRESENTING THE IDEAL POP MUSIC EXPERIENCE FOR LISTENERS WHO DON’T LIKE POP MUSIC. THE DEBUT RECORD, GRTST HTS, IS SET FOR RELEASE IN MAY 2015.")
   end
 end

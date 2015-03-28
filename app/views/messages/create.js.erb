@@ -1,7 +1,7 @@
 $("#content").html("<%= escape_javascript(render partial: section) %>");
 
 <%- if section == "home/landing" %>
-  $('nav li').removeClass('highlight');
+  $('nav li a').removeClass('highlight');
 <% end %>
 
 <%- if notice %>

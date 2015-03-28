@@ -6,12 +6,12 @@ class MessagesController < ApplicationController
   def create
     @random_image_url = Image.random.content.large.url
     @message = Message.new(params[:message])
+    section = "home/contact"
     if @message.valid?
       MessageMailer.new_message(@message).deliver
       notice = "Thank you for contacting us. We will be in touch."
-      section = "home/landing"
     else
-      section = "home/contact"
+      notice = nil
     end
 
     respond_to do |format|

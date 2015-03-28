@@ -4,7 +4,7 @@ RSpec.describe "contact" do
   before(:each) do
     FactoryGirl.create(:image)
     visit "/"
-    find("li > a > img#contact_icon").click
+    find("li > a#contact_link").click
   end
     
   it "populates the content section with contact ", :js => true do

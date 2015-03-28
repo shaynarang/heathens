@@ -1,10 +1,8 @@
 #words_content
 
-  %h1 Words
-
   #categories.col-md-12.col-sm-12.col-xs-12
     .col-md-2.col-sm-2.col-xs-12
-      Filter by Category:
+      Category:
     .col-md-10.col-sm-10.col-xs-12#category_filter_links
       - @categories.each do |category|
         = link_to category, filter_posts_path(:categories => category), :id => "#{category}_link", :remote => true

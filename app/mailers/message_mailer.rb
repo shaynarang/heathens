@@ -1,5 +1,5 @@
 class MessageMailer < ActionMailer::Base
-  default :to => "heathensmusic@gmail.com"
+  default :to => "hthnsmusic@gmail.com"
 
   def new_message(message)
     @message = message
