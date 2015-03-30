@@ -29,7 +29,6 @@ RSpec.describe "words" do
   end
 
   it "displays post categories", :js => true do
-    expect(page).to have_content("CATEGORY:")
     expect(page).to have_content("NEWS")
     expect(page).to have_content("REVIEW")
     expect(page).to have_content("ALL")

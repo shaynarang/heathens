@@ -1,69 +1,52 @@
 @import url(https://fonts.googleapis.com/css?family=Syncopate);
 
+$blackish: #0f0d0d;
+$white: #fff;
+$dark-magenta: #6e1b36;
+$magenta: #d8156c;
+
 html {
   padding-top: 0;
 }
 
 body {
-  background: #0f0d0d;
+  background: $blackish;
   text-transform: uppercase;
-}
-
-#wrapper {
-  width: 71%;
-  margin: 0 auto;
+  width: 99%;
 }
 
 h1, p {
-  color: #ffffff;
+  color: $white;
 }
 
 #heading_row {
-  margin-top: 10%;
-  height: 70px;
-}
-
-#heading_row, #audio_row, #main {
-  border-left: none;
-  border-right: none;
-}
-
-#main {
   margin-top: 5%;
-  border-bottom: none;
+}
 
-  h1 {
-    font-size: 200%;
-    background: #bb2351;
-    padding: 2% 2% 1.5% 2%;
-    width: 25%;
-    margin: 3% auto;
-  }
+.navbar-fixed-bottom {
+  padding: 1.1%;
+  background: $blackish !important;
+  border-top: 1px solid $white !important;
 }
 
 #audio_row {
-  background: #0f0d0d;
-  color: #d8156c;
   margin: 3% 0;
   padding: 1.5% 0;
-  border-top: 1px dotted white;
-}
-
-#content_column {
-  margin-top: 5%;
-  line-height: 2.5;
-  letter-spacing: 6px;
 }
 
 #content {
+  margin-top: 5%;
+  line-height: 2.5;
+  letter-spacing: 6px;
+  position: fixed;
+  overflow: auto;
+  overflow-x: hidden;
+  height: 62%;
+  padding-right: 12%;
+
   img {
     width: 100%;
     height: 538px;
-  }
-
-  h1 {
-    margin-bottom: 2%;
-    font-weight: bold;
   }
 }
 
@@ -73,8 +56,6 @@ h1, p {
 }
 
 #heading_row {
-  background: asset-url('backgrounds/hthns_bar.png');
-  background-repeat: no-repeat;
   border-top: none;
   border-bottom: none;
 }
@@ -85,32 +66,36 @@ h1, p {
 }
 
 nav {
+  background: $blackish !important;
+  border: none !important;
+
   ul {
     padding: 0;
+    width: 100%;
   }
 
   li {
-    padding: 8% 0;
-    text-align: center;
+    text-align: left;
     list-style-type: none;
+    padding: 7.5% 0;
   }
 
   a {
+    padding: 10% 5.5% 10% 10%;
     text-decoration: none !important;
-    color: #d8156c !important;
+    color: $magenta !important;
     font-size: 150%;
     letter-spacing: 8px;
-    margin-right: -8px;
   }
 }
 
 .hthns {
-  color: #d8156c;
+  color: $magenta;
   font-weight: bold;
 }
 
 .highlight {
-  background: #fff;
+  background: $white;
 }
 
 #heading, h1 {
@@ -129,7 +114,7 @@ nav {
 
   a {
     text-decoration: none;
-    color: #ffffff;
+    color: $white;
   }
 }
 
@@ -151,26 +136,30 @@ nav {
   border: none;
 }
 
-.post{
+.post {
   display: inline-block;
-  border-top: 2px solid white;
+  border-top: 1px dotted white;
   padding: 2%;
   cursor: pointer;
-}
 
-.post_heading{
-  text-align: center;
-  color: white;
-}
+  .post_heading {
+    text-align: center;
+    color: white;
+  }
 
-.post_content{
-  display: none;
-  margin-top: 2%;
-  color: white;
-}
+  .post_content {
+    display: none;
+    margin-top: 2%;
+    color: white;
+  }
 
-#bio_content, #contact_content, #music_content, #pictures_content, #videos_content, #words_content{
-  padding: 0 5% 5% 5%;
+  .post_time {
+    text-align: left;
+  }
+
+  .post_author {
+    text-align: right;
+  }
 }
 
 #contact_form {
@@ -198,17 +187,18 @@ nav {
   .actions {
     width: 20%;
     margin: 0 auto;
-  }
 
-  .actions input {
-    border: 1px solid #bb2351;
-    box-shadow: none;
-    height: 50px;
-    margin: 5% 0 15% 0;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 120%;
-    background: #bb2351;
+    input {
+      border: 1px solid #bb2351;
+      box-shadow: none;
+      height: 50px;
+      margin: 5% 0 15% 0;
+      color: $white;
+      font-weight: bold;
+      font-size: 120%;
+      background: #bb2351;
+      text-shadow: none;
+    }
   }
 
   label {
@@ -223,7 +213,7 @@ nav {
   font-size: 120%;
   text-align: center;
   letter-spacing: 3px;
-  color: #fff;
+  color: $white;
   background: #bb2351;
   padding: 1% 5%;
 }
@@ -231,11 +221,11 @@ nav {
 #now-playing {
   font-size: 120%;
   padding-top: 14px;
-  color: #d8156c;
+  color: $dark-magenta;
   letter-spacing: 4px;
 
   span#song-title {
-    color: #fff;
+    color: $white;
   }
 }
 
@@ -255,7 +245,7 @@ nav {
   margin: 0 12px;
   width: 50px;
   height: 50px;
-  border: 4px solid #fff;
+  border: 4px solid $white;
   #play-container,
   #pause-container {
     width: 100%;
@@ -268,7 +258,7 @@ nav {
       position: absolute;
       top: 7px;
       left: 14px;
-      border-left: 20px solid #fff;
+      border-left: 20px solid $white;
       border-top: 14px solid transparent;
       border-bottom: 14px solid transparent;
     }
@@ -278,8 +268,8 @@ nav {
       position: absolute;
       top: 9px;
       left: 11px;
-      border-left: 7px solid #fff;
-      border-right: 7px solid #fff;
+      border-left: 7px solid $white;
+      border-right: 7px solid $white;
     }
   }
 }
@@ -296,22 +286,23 @@ nav {
 }
 
 .ff {
-  border-left: 16px solid #fff;
+  border-left: 16px solid $white;
 }
 
 .rew {
-  border-right: 16px solid #fff;}
+  border-right: 16px solid $white;
+}
 
 #categories {
   margin-bottom: 3%;
-  padding: 2%;
-  color: #ffffff;
+  padding: 1% 0 0 2%;
+  color: $white;
 
   a {
     padding: 2%;
     margin-right: 2%;
-    background: #6e1b36;
-    color: #ffffff;
+    background: $dark-magenta;
+    color: $white;
     text-decoration: none;
   }
 }
@@ -335,11 +326,6 @@ and (orientation : portrait) {
       width: 16%;
     }
   }
-
-  #main h1{
-    font-size: 140%;
-    width: 100%;
-  }
 }
 
 @media only screen 
@@ -356,20 +342,13 @@ and (max-device-width : 767px) {
     padding-top: 0;
   }
 
-  #heading_row, #audio_row, #main {
-    border: none;
+  #audio_row {
+    display: none;
   }
 
   #heading h1 {
     font-size: 300%;
     margin-bottom: 0%;
-  }
-
-  #main h1{
-    font-size: 200%;
-    width: 100%;
-    border: none;
-    background: none;
   }
 
   nav {
@@ -403,7 +382,7 @@ and (max-device-width : 767px) {
 
   .picture {
     margin-top: 5%;
-    border: 1px solid #ffffff;
+    border: 1px solid $white;
   }
 
   .fancybox {

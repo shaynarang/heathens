@@ -1,7 +1,7 @@
 $ ->
   highlight = (element) ->
-    $("nav li").removeClass "highlight"
+    $("nav li a").removeClass "highlight"
     $(element).addClass "highlight"
     
   $("nav li a").click ->
-    highlight $(this).parent()
+    highlight $(this)

@@ -1,21 +1,22 @@
-#wrapper
-  .row#heading_row
-    .col-md-12.col-sm-12.col-xs-12
+.row#heading_row
+  = image_tag 'backgrounds/hthns_bar.png', :style => "width: 87.5%;"
 
-  .row
-    .col-md-2.col-sm-12#nav_column
-      %nav
-        %ul
-          - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
-          - categories.each do |category|
-            %li
-              = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true
+.row#nav_and_content_row
 
-    #main.col-md-10.col-sm-12.col-xs-12#content_column
-      #content
-        = image_tag @random_image_url, id: "landing_image"
+  .col-md-2.col-md-offset-1.col-sm-12#nav_column
+    %nav
+      %ul
+        - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
+        - categories.each do |category|
+          %li
+            = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true
 
-  .row
-    #audio_row
+  .col-md-9.col-sm-12.col-xs-12
+    #content
+      = image_tag @random_image_url, id: "landing_image"
+
+.row#audio_row
+  %nav.navbar.navbar-default.navbar-fixed-bottom
+    .container-fluid
       #audio_player
         = render 'audio_player'

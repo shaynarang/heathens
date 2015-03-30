@@ -1,12 +1,10 @@
 #words_content
 
   #categories.col-md-12.col-sm-12.col-xs-12
-    .col-md-2.col-sm-2.col-xs-12
-      Category:
-    .col-md-10.col-sm-10.col-xs-12#category_filter_links
+    .col-md-12.col-sm-10.col-xs-12#category_filter_links
+      = link_to "All", filter_posts_path(:categories => "all"), :id => "all_link", :remote => true
       - @categories.each do |category|
         = link_to category, filter_posts_path(:categories => category), :id => "#{category}_link", :remote => true
-      = link_to "All", filter_posts_path(:categories => "all"), :id => "all_link", :remote => true
 
   #posts
     = render 'posts', :posts => @posts
