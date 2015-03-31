@@ -21,6 +21,14 @@ h1, p {
 
 #heading_row {
   margin-top: 5%;
+
+  img {
+    width: 87.5%;
+  }
+}
+
+#hthns_word, #mobile_nav {
+  display: none;
 }
 
 .navbar-fixed-bottom {
@@ -151,10 +159,12 @@ nav {
     display: none;
     margin-top: 2%;
     color: white;
+    font-size: 90%;
   }
 
   .post_time {
     text-align: left;
+    color: $dark-magenta;
   }
 
   .post_author {
@@ -204,12 +214,17 @@ nav {
   label {
     color: white;
   }
+
+  .field {
+    .contact_form_error {
+      color: $dark-magenta !important;
+    }
+  }
 }
 
 .notice, .alert {
   display: none;
-  width: 50%;
-  margin: 3% auto;
+  margin: -2.5% auto 2.5% auto;
   font-size: 120%;
   text-align: center;
   letter-spacing: 3px;
@@ -311,9 +326,6 @@ nav {
 and (min-device-width : 768px) 
 and (max-device-width : 1024px)
 and (orientation : portrait) {
-  #heading h1{
-    font-size: 600%;
-  }
 
   nav {
     ul {
@@ -331,85 +343,85 @@ and (orientation : portrait) {
 @media only screen 
 and (min-device-width : 569px) 
 and (max-device-width : 767px) {
-  #heading h1{
-    font-size: 800%;
-  }
+
 }
 
 @media (min-width: 320px) and (max-width: 568px) {
-  #wrapper {
-    width: 100%;
-    padding-top: 0;
-  }
-
-  #audio_row {
+  #hthns_bar, #audio_row {
     display: none;
   }
 
-  #heading h1 {
-    font-size: 300%;
-    margin-bottom: 0%;
+  #hthns_word, #mobile_nav {
+    display: block;
+    padding: 4%;
+    text-align: center;
   }
 
-  nav {
-    margin-top: 1%;
-    padding-bottom: 25%;
+  #standard_nav {
+    display: none;
+  }
 
-    ul {
-      float: left;
-      margin: auto;
-      padding: 0;
+  #compressed {
+    display: block;
+
+    ul li {
+      text-align: center;
+      padding: 0%;
+      font-size: 200%;
+      color: $dark-magenta !important;
+      letter-spacing: 8px;
     }
+  }
 
-    li {
-      width: 15%;
+  #expanded {
+    display: none;
+
+    ul li {
+      text-align: center;
+      padding: 3%;
+
+      a {
+        padding: 3% 1% 3% 3%;
+      }
     }
   }
 
-  .highlight {
-    border: 1px solid #e6e79b;
-  }
-
-  nav img {
-    height: 48px;
-    width: 100%;
-  }
-
-  #bio_content, #contact_content, #music_content, #pictures_content, #videos_content, #words_content {
-    padding-top: 3%;
-    padding-left: 8%;
-  }
-
-  .picture {
-    margin-top: 5%;
-    border: 1px solid $white;
+  #content {
+    position: static;
+    padding: 0 6%;
+    margin: 1% 0 5% 0;
   }
 
   .fancybox {
     pointer-events: none;
   }
 
-  #categories {
-    text-align: center;
+  #category_filter_links {
+    padding: 0;
+  }
+
+  .post {
+    line-height: 175%;
+  }
+
+  .post_body {
+    font-size: 80%;
+    padding: 0;
+  }
+
+  .post_content {
+    margin-top: 5% !important;
+  }
+
+  .post_time, .post_title, .post_author {
+    text-align: left !important;
+    font-size: 90% !important;
+    padding: 0;
   }
 
   .contact_row {
     padding-left: 0;
     padding-right: 0;
-  }
-
-  #now-playing {
-    text-align: center;
-    font-size: 90%;
-  }
-
-  #audio_controls_column {
-    margin: 5% 0;
-  }
-
-  #audio_controls {
-    width: 60%;
-    margin: auto;
   }
 
   #contact_form .actions input {
@@ -423,7 +435,21 @@ and (max-device-width : 767px) {
     height: 200px;
   }
 
-  #category_filter_links {
-    margin: 5% 0 2% 0;
+  #pictures_content div {
+    padding: 0;
+  }
+
+  .notice, .alert {
+    margin: 10% 0 15% 0;
+    text-align: center;
+    letter-spacing: 3px;
+    color: $white;
+    background: #bb2351;
+    padding: 10% 5%;
+  }
+
+  .contact_form_error {
+    color: yellow !important;
+    line-height: 2px !important;
   }
 }

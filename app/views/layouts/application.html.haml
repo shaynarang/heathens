@@ -7,10 +7,12 @@
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = csrf_meta_tags
   %body
-    .row.col-md-12.col-sm-12.col-xs-12
-      .notice
+    - if notice
+      .row.col-md-12.col-sm-12.col-xs-12.notice
         = notice
-    .row.col-md-12.col-sm-12.col-xs-12
-      .alert
+
+    - if alert
+      .row.col-md-12.col-sm-12.col-xs-12.alert
         = alert
+
     = yield

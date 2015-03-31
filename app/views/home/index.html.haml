@@ -1,15 +1,16 @@
 .row#heading_row
-  = image_tag 'backgrounds/hthns_bar.png', :style => "width: 87.5%;"
+  #hthns_bar
+    = image_tag 'backgrounds/hthns_bar.png'
+  #hthns_word
+    = image_tag 'backgrounds/hthns_word.png'
 
 .row#nav_and_content_row
 
   .col-md-2.col-md-offset-1.col-sm-12#nav_column
-    %nav
-      %ul
-        - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
-        - categories.each do |category|
-          %li
-            = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true
+    #standard_nav
+      = render 'layouts/standard_nav'
+    #mobile_nav
+      = render 'layouts/mobile_nav'
 
   .col-md-9.col-sm-12.col-xs-12
     #content
@@ -19,4 +20,10 @@
   %nav.navbar.navbar-default.navbar-fixed-bottom
     .container-fluid
       #audio_player
-        = render 'audio_player'
+        = render 'layouts/audio_player'
+
+:javascript
+
+  function toggleExpanded() {
+    $("#expanded").slideToggle("medium");
+  }

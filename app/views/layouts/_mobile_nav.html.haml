@@ -1,0 +1,11 @@
+%nav
+  #compressed
+    %ul
+      %li{:onclick => "toggleExpanded()"}
+        Menu
+  #expanded
+    %ul
+      - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
+      - categories.each do |category|
+        %li
+          = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true, onclick: "toggleExpanded()"

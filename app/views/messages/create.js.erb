@@ -1,10 +1,9 @@
 $("#content").html("<%= escape_javascript(render partial: section) %>");
 
-<%- if section == "home/landing" %>
-  $('nav li a').removeClass('highlight');
-<% end %>
-
 <%- if notice %>
+  $('html,body').animate({ scrollTop: 0 }, 400);
+  $("#contact_form_submit_button").prop("disabled", true);
+  $(".notice").hide();
   $(".notice").html("<%= escape_javascript(flash[:notice]) %>");
-  $(".notice").css("display", "block");
+  $(".notice").fadeIn('medium');
 <% end %>

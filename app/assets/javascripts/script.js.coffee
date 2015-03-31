@@ -1,7 +1,11 @@
 $ ->
   highlight = (element) ->
-    $("nav li a").removeClass "highlight"
+    $("#standard_nav nav ul li a").removeClass "highlight"
+    $("#mobile_nav nav #expanded ul li a").removeClass "highlight"
     $(element).addClass "highlight"
     
-  $("nav li a").click ->
-    highlight $(this)
+  $("#standard_nav nav ul li a").click ->
+    highlight this
+
+  $("#mobile_nav nav #expanded ul li a").click ->
+    highlight this

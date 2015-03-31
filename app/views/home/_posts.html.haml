@@ -1,12 +1,12 @@
 - posts.each do |post|
   .post.col-md-12.col-sm-12.col-xs-12{onclick: "displayPostContent('#{post.title.gsub(/\s+/, "")}')", id: "#{post.title.downcase.gsub(/\s+/, "")}"}
     .post_heading
-      .col-md-2.col-sm-2.col-sm-12.post_time
+      .col-md-2.col-sm-12.col-xs-12.post_time
         = post.created_at.strftime("%d %b %y")
-      .col-md-8.col-sm-8.col-xs-12.post_title
+      .col-md-8.col-sm-12.col-xs-12.post_title
         = post.title
-      .col-md-2.col-sm-2.col-xs-12.post_author
+      .col-md-2.col-sm-12.col-xs-12.post_author
         = post.author
-    .col-md-12.col-sm-12.col-xs-12
+    .col-md-12.col-sm-12.col-xs-12.post_body
       .post_content{id: "#{post.title.gsub(/\s+/, "")}"}
         = post.content
