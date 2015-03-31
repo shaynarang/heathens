@@ -1,1 +1,3 @@
+$('#posts').hide();
 $("#posts").html("<%= escape_javascript(render partial: 'home/posts', :locals => {:posts => @posts}) %>");
+$('#posts').fadeIn('medium');
