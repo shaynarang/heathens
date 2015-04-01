@@ -94,5 +94,5 @@ Rails.application.configure do
   }
 
   # Specify what domain to use for mailer URLs
-  config.action_mailer.default_url_options = {host: "heathens.herokuapp.com/"}
+  config.action_mailer.default_url_options = {host: "hthns.herokuapp.com/"}
 end
