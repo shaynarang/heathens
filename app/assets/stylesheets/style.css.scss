@@ -389,6 +389,7 @@ and (max-device-width : 767px) {
     position: static;
     padding: 0 6%;
     margin: 1% 0 5% 0;
+    line-height: 200%;
   }
 
   .fancybox {
@@ -404,8 +405,9 @@ and (max-device-width : 767px) {
   }
 
   .post_body {
-    font-size: 80%;
+    font-size: 85%;
     padding: 0;
+    letter-spacing: 4px;
   }
 
   .post_content {
@@ -414,7 +416,7 @@ and (max-device-width : 767px) {
 
   .post_time, .post_title, .post_author {
     text-align: left !important;
-    font-size: 90% !important;
+    font-size: 95% !important;
     padding: 0;
   }
 
