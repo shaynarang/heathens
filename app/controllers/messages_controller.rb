@@ -14,8 +14,9 @@ class MessagesController < ApplicationController
       notice = "Something went wrong. Please try again."
     end
 
+    flash[:notice] = notice
+
     respond_to do |format|
-      flash[:notice] = notice
       format.js { render "create", :locals => { section: section } }
     end
   end
