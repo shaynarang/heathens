@@ -11,10 +11,10 @@ class MessagesController < ApplicationController
       MessageMailer.new_message(@message).deliver
       notice = "Thank you for contacting us. We will be in touch."
     else
-      notice = nil
+      notice = "Something went wrong. Please try again."
     end
 
-    flash[:notice] = notice if notice
+    flash[:notice] = notice
 
     respond_to do |format|
       format.js { render "create", :locals => { section: section } }
