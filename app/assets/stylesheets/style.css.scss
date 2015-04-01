@@ -2,7 +2,6 @@
 
 $blackish: #0f0d0d;
 $white: #fff;
-$dark-magenta: #6e1b36;
 $magenta: #d8156c;
 
 html {
@@ -164,7 +163,7 @@ nav {
 
   .post_time {
     text-align: left;
-    color: $dark-magenta;
+    color: $magenta;
   }
 
   .post_author {
@@ -217,7 +216,7 @@ nav {
 
   .field {
     .contact_form_error {
-      color: $dark-magenta !important;
+      color: $magenta !important;
     }
   }
 }
@@ -236,7 +235,7 @@ nav {
 #now-playing {
   font-size: 120%;
   padding-top: 14px;
-  color: $dark-magenta;
+  color: $magenta;
   letter-spacing: 4px;
 
   span#song-title {
@@ -316,7 +315,7 @@ nav {
   a {
     padding: 2%;
     margin-right: 2%;
-    background: $dark-magenta;
+    background: $magenta;
     color: $white;
     text-decoration: none;
   }
@@ -368,7 +367,7 @@ and (max-device-width : 767px) {
       text-align: center;
       padding: 0%;
       font-size: 200%;
-      color: $dark-magenta !important;
+      color: $magenta !important;
       letter-spacing: 8px;
     }
   }
