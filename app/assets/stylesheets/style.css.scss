@@ -359,6 +359,10 @@ and (orientation : portrait) {
     padding: 0;
   }
 
+  #categories a {
+    padding-left: 3%;
+  }
+
   .post_time, .post_title, .post_author {
     text-align: left !important;
     padding: 0;
@@ -417,6 +421,10 @@ and (orientation : landscape) {
     font-size: 100%;
     margin-bottom: 4%;
   }
+
+  #categories a {
+    padding-left: 3%;
+  }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -472,6 +480,11 @@ and (orientation : landscape) {
 
   #category_filter_links {
     padding: 0;
+  }
+
+  #categories a {
+    margin-right: 1%;
+    padding-left: 4%;
   }
 
   .post {
