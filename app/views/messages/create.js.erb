@@ -1,9 +1,11 @@
-$("#content").html("<%= escape_javascript(render partial: section) %>");
+$("#content").html("<%= escape_javascript(render partial: 'home/contact') %>");
 
-<%- if notice %>
-  $("#contact_form_submit_button").prop("disabled", true);
-  $(".notice").hide();
-  $(".notice").html("<%= escape_javascript(flash[:notice]) %>");
-  $(".notice").fadeIn('medium');
-  $('html,body').animate({ scrollTop: 0 }, 400);
+<% if @message.valid? %>
+  $(".actions").hide();
+  $(".actions").css({"color": "#fff", "background-color": "#d8156c", "width": "100%", "padding": "2%", "text-align": "center"});
+  $(".actions").html("Thank you for contacting us. We will be in touch.");
+  $(".actions").fadeIn("medium");
+<% else %>
+  $(".contact_form_error").hide();
+  $(".contact_form_error").fadeIn("medium");
 <% end %>
