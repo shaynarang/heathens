@@ -14,6 +14,6 @@ RSpec.describe "social" do
     expect(page).to have_selector("img[alt=\"Instagram\"]")
     expect(page).to have_selector("a[href=\"https://instagram.com/hthns\"]")
     expect(page).to have_selector("img[alt=\"Youtube\"]")
-    expect(page).to have_selector("a[href=\"https://youtube.com\"]")
+    expect(page).to have_selector("a[href=\"https://www.youtube.com/channel/UCuT5fPodRtSLdxXHLAxw4WA\"]")
   end
 end
