@@ -5,10 +5,6 @@ RSpec.describe "index" do
     FactoryGirl.create(:image)
     visit "/"
   end
-    
-  it "displays an image" do
-    expect(page).to have_selector("img#landing_image[alt=\"Large test\"]")
-  end
 
   it "displays navigation links" do
     expect(page).to have_selector("li > a#bio_link")

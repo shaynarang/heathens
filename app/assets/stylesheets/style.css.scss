@@ -3,6 +3,7 @@
 $blackish: #0f0d0d;
 $white: #fff;
 $magenta: #d8156c;
+$darker-magenta: #bb2351;
 
 html {
   padding-top: 0;
@@ -88,7 +89,7 @@ nav {
   }
 
   a {
-    padding: 10% 7% 10% 10%;
+    padding: 7.5% 7% 7.5% 10%;
     text-decoration: none !important;
     color: $magenta !important;
     font-size: 150%;
@@ -185,7 +186,7 @@ nav {
 
   input:focus, #message_content:focus {
     outline: 0;
-    border: solid 3px #bb2351;
+    border: solid 3px $darker-magenta;
     box-shadow: none;
   }
 
@@ -198,14 +199,14 @@ nav {
     margin: 0 auto;
 
     input {
-      border: 1px solid #bb2351;
+      border: 1px solid $darker-magenta;
       box-shadow: none;
       height: 50px;
       margin: 5% 0 15% 0;
       color: $white;
       font-weight: bold;
       font-size: 120%;
-      background: #bb2351;
+      background: $darker-magenta;
       text-shadow: none;
     }
   }
@@ -228,7 +229,7 @@ nav {
   text-align: center;
   letter-spacing: 3px;
   color: $white;
-  background: #bb2351;
+  background: $darker-magenta;
   padding: 1% 5%;
 }
 
@@ -315,7 +316,7 @@ nav {
   a {
     padding: 2%;
     margin-right: 2%;
-    background: $magenta;
+    background: $darker-magenta;
     color: $white;
     text-decoration: none;
   }
@@ -532,7 +533,7 @@ and (orientation : landscape) {
     text-align: center;
     letter-spacing: 3px;
     color: $white;
-    background: #bb2351;
+    background: $darker-magenta;
     padding: 10% 5%;
   }
 

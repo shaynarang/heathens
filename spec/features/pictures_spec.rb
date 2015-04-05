@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "pictures" do
+RSpec.describe "pictures", :on_hold => true do
   before(:each) do
     first_image = FactoryGirl.create(:image)
     second_image = FactoryGirl.create(:image, content: Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'photos', 'test2.jpg')))

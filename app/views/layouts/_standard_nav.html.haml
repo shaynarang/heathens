@@ -1,6 +1,6 @@
 %nav
   %ul
-    - categories = ["bio", "music", "videos", "words", "pictures", "contact"]
+    - categories = ["bio", "music", "videos", "words", "contact"]
     - categories.each do |category|
       %li
         = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true
