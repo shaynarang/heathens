@@ -172,6 +172,10 @@ nav {
   }
 }
 
+#social_content img {
+  height: 50%;
+}
+
 #contact_form {
   input, #message_content {
     margin-bottom: 2%;
@@ -506,6 +510,10 @@ and (orientation : landscape) {
     text-align: left !important;
     font-size: 95% !important;
     padding: 0;
+  }
+
+  #social_content img {
+    height: 100% !important;
   }
 
   .contact_row {

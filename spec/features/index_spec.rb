@@ -11,7 +11,7 @@ RSpec.describe "index" do
     expect(page).to have_selector("li > a#music_link")
     expect(page).to have_selector("li > a#videos_link")
     expect(page).to have_selector("li > a#words_link")
-    expect(page).to have_selector("li > a#pictures_link")
+    expect(page).to have_selector("li > a#social_link")
     expect(page).to have_selector("li > a#contact_link")
   end
 
