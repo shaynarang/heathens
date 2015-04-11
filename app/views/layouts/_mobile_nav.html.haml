@@ -5,7 +5,7 @@
         Menu
   #expanded
     %ul
-      - categories = ["words", "bio", "music", "videos", "social", "contact"]
+      - categories = ["bio", "words", "music", "videos", "social", "contact"]
       - categories.each do |category|
         %li
           = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true, onclick: "toggleExpanded()"

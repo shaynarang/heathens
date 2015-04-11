@@ -6,6 +6,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}
     = csrf_meta_tags
+    = favicon_link_tag 'favicon.ico'
   %body
     - if notice
       .row.col-md-12.col-sm-12.col-xs-12.notice

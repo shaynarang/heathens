@@ -42,7 +42,7 @@ h1, p {
   padding: 1.5% 0;
 
   .navbar {
-    background: #c3c3c3 !important;
+    background: #7e7e7e !important;
   }
 }
 
@@ -239,7 +239,7 @@ nav {
 #now-playing {
   font-size: 140%;
   padding-top: 14px;
-  color: $magenta;
+  color: $blackish;
   letter-spacing: 4px;
 
   span#song-title {
@@ -331,7 +331,21 @@ and (max-device-width : 1024px)
 and (orientation : portrait) {
 
   #heading_row {
-    margin-top: 10%;
+    margin-top: 7.5%;
+
+    img {
+      height: 100px;
+    }
+
+    #hthns_bar img {
+      float: left;
+      width: 60%;
+    }
+
+    #hthns_word img {
+      float: right;
+      width: 35%;
+    }
   }
 
   #nav_and_content_row {
@@ -395,7 +409,7 @@ and (orientation : portrait) {
   }
 
   #audio_player {
-    padding: 2% 0;
+    padding: 1% 0;
   }
 
   #now-playing, #audio_controls {
@@ -409,6 +423,12 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (orientation : landscape) {
 
+  #heading_row {
+    #hthns_bar img, #hthns_word img {
+      height: 80px;
+    }
+  }
+
   #nav_column {
     margin-left: 2%;
   }
@@ -418,7 +438,7 @@ and (orientation : landscape) {
   }
 
   #audio_player {
-    padding: 2% 0;
+    padding: 1% 0;
   }
 
   #now-playing, #audio_controls {
