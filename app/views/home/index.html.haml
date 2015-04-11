@@ -1,10 +1,11 @@
 .row#heading_row
-  .col-md-9.col-md-pull-1
-    #hthns_bar
-      = image_tag 'backgrounds/hthns_bar.jpg'
-  .col-md-3.col-md-pull-1
-    #hthns_word
-      = image_tag 'backgrounds/htns_word.png'
+  = link_to display_content_path(:section => "words"), :remote => true do
+    .col-md-9.col-md-pull-1
+      #hthns_bar
+        = image_tag 'backgrounds/hthns_bar.jpg'
+    .col-md-3.col-md-pull-1
+      #hthns_word
+        = image_tag 'backgrounds/htns_word.png'
 
 .row#nav_and_content_row
 
@@ -16,8 +17,7 @@
 
   .col-md-9.col-sm-9.col-xs-12
     #content
-      / disable images for the time being
-      / = image_tag @random_image_url, id: "landing_image"
+      = render 'words'
 
 .row#audio_row
   %nav.navbar.navbar-default.navbar-fixed-bottom

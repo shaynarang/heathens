@@ -40,6 +40,10 @@ h1, p {
 #audio_row {
   margin: 3% 0;
   padding: 1.5% 0;
+
+  .navbar {
+    background: #c3c3c3 !important;
+  }
 }
 
 #content {
@@ -233,7 +237,7 @@ nav {
 }
 
 #now-playing {
-  font-size: 120%;
+  font-size: 140%;
   padding-top: 14px;
   color: $magenta;
   letter-spacing: 4px;
