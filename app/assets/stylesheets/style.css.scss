@@ -47,14 +47,10 @@ h1, p {
 }
 
 #content {
-  margin-top: 5%;
+  padding-left: 15%;
+  margin-top: 7%;
   line-height: 2.5;
   letter-spacing: 6px;
-  position: fixed;
-  overflow: auto;
-  overflow-x: hidden;
-  height: 62%;
-  padding-right: 9%;
 
   img {
     width: 100%;
@@ -175,6 +171,11 @@ nav {
   height: 50%;
 }
 
+.contact_row {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 #contact_form {
   input, #message_content {
     margin-bottom: 2%;
@@ -182,7 +183,6 @@ nav {
     height: 40px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    padding: 15px;
     margin: 0 0 10px 0;
     border-radius: 0px;
   }
@@ -343,7 +343,8 @@ and (orientation : portrait) {
     }
 
     #hthns_word img {
-      float: right;
+      float: left;
+      margin-left: 2%;
       width: 35%;
     }
   }
@@ -367,10 +368,6 @@ and (orientation : portrait) {
         }
       }
     }
-  }
-
-  #content {
-    padding-left: 7.5%;
   }
 
   #category_filter_links {
@@ -401,7 +398,7 @@ and (orientation : portrait) {
     width: 175%;
     margin-left: -40%;
     font-size: 100%;
-    height: 90%;
+    padding: 18%;
   }
 
   #pictures_content img {
@@ -429,12 +426,17 @@ and (orientation : landscape) {
     }
   }
 
-  #nav_column {
-    margin-left: 2%;
-  }
+  nav {
+    ul {
 
-  #content {
-    padding-left: 5%;
+      li {
+        margin-bottom: 10%;
+
+        a {
+          font-size: 125%;
+        }
+      }
+    }
   }
 
   #audio_player {
@@ -502,13 +504,16 @@ and (orientation : landscape) {
     pointer-events: none;
   }
 
-  #category_filter_links {
-    padding: 0;
+  .category_link_column {
+    margin-bottom: 15% !important;
+
+    a {
+      padding: 5% !important;
+    }
   }
 
-  #categories a {
-    margin-right: 1%;
-    padding-left: 4%;
+  #category_filter_links {
+    padding: 0;
   }
 
   .post {
@@ -535,16 +540,10 @@ and (orientation : landscape) {
     height: 100% !important;
   }
 
-  .contact_row {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   #contact_form .actions input {
     width: 175%;
     margin-left: -40%;
     font-size: 100%;
-    height: 90%;
   }
 
   #content img {
