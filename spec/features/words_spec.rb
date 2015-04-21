@@ -3,8 +3,15 @@ require 'rails_helper'
 RSpec.describe "words" do
   before(:each) do
     FactoryGirl.create(:image)
-    @news_post = FactoryGirl.create(:post, author: "Shay", title: "HTHNS News", content: "This is some news.", categories: ["news"])
-    @review_post = FactoryGirl.create(:post, author: "Gor!", title: "HTHNS Review", content: "This is a review.", categories: ["review"])
+
+    @news_post = FactoryGirl.create(:post, author: "Shay", title: "HTHNS News", content: "This is some news.")
+    news_category = FactoryGirl.create(:category, name: "News")
+    news_category.posts << @news_post
+
+    @review_post = FactoryGirl.create(:post, author: "Gor!", title: "HTHNS Review", content: "This is a review.")
+    review_category = FactoryGirl.create(:category, name: "Review")
+    review_category.posts << @review_post
+
     visit "/"
     find("li > a#words_link").click
   end

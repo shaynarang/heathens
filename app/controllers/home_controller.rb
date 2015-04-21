@@ -1,14 +1,14 @@
 class HomeController < ApplicationController
   def index
     @posts = Post.order('created_at DESC').all
-    @categories = @posts.pluck(:categories).uniq.flatten
+    @categories = Category.all
   end
 
   def display_content
     @message = Message.new
     @galleries = Gallery.all
     @posts = Post.order('created_at DESC').all
-    @categories = @posts.pluck(:categories).uniq.flatten
+    @categories = Category.all
     @section = params[:section]
     respond_to do |format|
       format.js

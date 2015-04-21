@@ -1,5 +1,4 @@
 class Post < ActiveRecord::Base
   has_many :images, :as => :imageable
-
-  scope :by_category, ->(category) { where(:categories => "{#{category}}") }
+  has_and_belongs_to_many :categories
 end
