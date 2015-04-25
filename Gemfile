@@ -25,11 +25,6 @@ group :doc do
   gem 'sdoc', '~> 0.4.0'
 end
 
-group :development do
-  gem 'spring'
-  gem 'spring-commands-rspec'
-end
-
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
   gem 'shoulda-matchers'
@@ -41,6 +36,16 @@ group :development, :test do
   gem 'guard-rspec', require: false
   gem 'guard-livereload', require: false
   gem "rack-livereload", :group => :development
+end
+
+group :development do
+  gem 'spring'
+  gem 'spring-commands-rspec'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :production do
