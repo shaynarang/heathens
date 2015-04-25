@@ -1,0 +1,4 @@
+$('.notice, .alert').hide();
+$("#content").hide();
+$("#content").html("<%= escape_javascript(render partial: 'social') %>");
+$("#content").fadeIn('medium');

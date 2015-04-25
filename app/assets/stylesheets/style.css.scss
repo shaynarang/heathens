@@ -167,8 +167,20 @@ nav {
   }
 }
 
-#social_content img {
-  height: 50%;
+#social_content {
+  img {
+    height: 50%;
+  }
+
+  ul li {
+    list-style-type: none;
+    color: white;
+    padding: 1% 0;
+  }
+
+  .social_post_time {
+    color: $magenta;
+  }
 }
 
 .contact_row {

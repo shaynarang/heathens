@@ -1,13 +1,11 @@
 #social_content
-  .col-md-3.col-sm-3.col-xs-3
-    = link_to 'https://www.facebook.com/hthns', target: "_blank" do
-      = image_tag 'external_logos/facebook.png'
-  .col-md-3.col-sm-3.col-xs-3
-    = link_to 'https://twitter.com/hthnsmusic', target: "_blank" do
-      = image_tag 'external_logos/twitter.png'
-  .col-md-3.col-sm-3.col-xs-3
-    = link_to 'https://instagram.com/hthns', target: "_blank" do
-      = image_tag 'external_logos/instagram.png'
-  .col-md-3.col-sm-3.col-xs-3
-    = link_to 'https://www.youtube.com/channel/UCuT5fPodRtSLdxXHLAxw4WA', target: "_blank" do
-      = image_tag 'external_logos/youtube.png'
+  %ul#social_posts
+    - @social_posts.each do |time, message|
+      - if message.size > 0
+        .col-md-12.col-sm-12.col-xs-12
+          %li
+            .col-md-2.col-sm-12.col-xs-12.social_post_time
+              - parsed_time = DateTime.parse(time)
+              = "#{parsed_time.strftime('%m.%d.%y')}"
+            .col-md-10.col-sm-12.col-xs-12.social_post_message
+              = "#{message}"

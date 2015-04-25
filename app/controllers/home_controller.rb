@@ -14,4 +14,12 @@ class HomeController < ApplicationController
       format.js
     end
   end
+
+  def social
+    social_post_fetcher = SocialPostFetcher.new
+    @social_posts = social_post_fetcher.fetch_posts
+    respond_to do |format|
+      format.js
+    end
+  end
 end
