@@ -20,6 +20,7 @@ gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_attr'
 gem 'fancybox-rails'
+gem 'twitter'
 
 group :doc do
   gem 'sdoc', '~> 0.4.0'
