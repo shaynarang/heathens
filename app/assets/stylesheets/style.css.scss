@@ -47,10 +47,13 @@ h1, p {
 }
 
 #content {
-  padding-left: 15%;
-  margin-top: 7%;
+  padding-right: 9%;
+  margin-top: 5%;
   line-height: 2.5;
   letter-spacing: 6px;
+  position: fixed;
+  height: 52%;
+  overflow: auto;
 
   img {
     width: 100%;
@@ -64,18 +67,13 @@ h1, p {
 }
 
 #nav_column {
-  padding: 0;
-  margin-top: 4%;
+  margin-top: 5%;
+  padding-left: 6.5%;
 }
 
 nav {
   background: $blackish !important;
   border: none !important;
-
-  ul {
-    padding: 0;
-    width: 100%;
-  }
 
   li {
     text-align: left;
@@ -140,7 +138,6 @@ nav {
 }
 
 .post {
-  display: inline-block;
   border-top: 1px dotted white;
   padding: 2%;
   cursor: pointer;
@@ -172,30 +169,29 @@ nav {
     height: 50%;
   }
 
-  ul li {
-    list-style-type: none;
-    color: white;
-    padding: 1% 0;
+  ul {
+    padding: 0;
+
+    li {
+      list-style-type: none;
+      color: white;
+      padding: 1% 0;
+    }
   }
 
   .social_post_time {
     color: $magenta;
+    text-align: right;
   }
-}
-
-.contact_row {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 #contact_form {
   input, #message_content {
-    margin-bottom: 2%;
     width: 100%;
+    margin-bottom: 2%;
     height: 40px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin: 0 0 10px 0;
     border-radius: 0px;
   }
 
@@ -206,7 +202,7 @@ nav {
   }
 
   #message_content {
-    height: 150px;
+    height: 200px;
   }
 
   .actions {
@@ -231,6 +227,8 @@ nav {
   }
 
   .field {
+    width: 102%;
+
     .contact_form_error {
       color: $magenta !important;
     }
@@ -365,13 +363,8 @@ and (orientation : portrait) {
     margin-top: 5%;
   }
 
-  #nav_column {
-    margin-left: 5%;
-  }
-
   nav {
     ul {
-
       li {
         margin-bottom: 15%;
 
@@ -380,6 +373,23 @@ and (orientation : portrait) {
         }
       }
     }
+  }
+
+  #content {
+    height: 60%;
+    padding: 0 5%;
+  }
+
+  #social_content {
+    width: 80%;
+  }
+
+  .social_post_time {
+    text-align: left !important;
+  }
+
+  .social_post_message {
+    margin-bottom: 3%;
   }
 
   #category_filter_links {
@@ -552,10 +562,32 @@ and (orientation : landscape) {
     height: 100% !important;
   }
 
-  #contact_form .actions input {
-    width: 175%;
-    margin-left: -40%;
-    font-size: 100%;
+  #social_posts {
+    padding: 0;
+    margin: 0;
+
+    .social_post_time {
+      padding: 0;
+      text-align: left;
+    }
+
+    .social_post_message {
+      font-size: 85%;
+      padding: 0 0 5% 0;
+    }
+  }
+
+  .contact_row {
+    padding: 0;
+  }
+
+  #contact_form {
+    padding: 0;
+    .actions input {
+      width: 175%;
+      margin-left: -40%;
+      font-size: 100%;
+    }
   }
 
   #content img {

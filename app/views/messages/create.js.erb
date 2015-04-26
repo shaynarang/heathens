@@ -2,7 +2,7 @@ $("#content").html("<%= escape_javascript(render partial: 'home/contact') %>");
 
 <% if @message.valid? %>
   $(".actions").hide();
-  $(".actions").css({"color": "#fff", "background-color": "#bb2351", "width": "100%", "padding": "2%", "text-align": "center"});
+  $(".actions").css({"color": "#fff", "background-color": "#bb2351", "width": "102%", "padding": "2%", "text-align": "center"});
   $(".actions").html("Thank you for contacting us. We will be in touch.");
   $(".actions").fadeIn("medium");
 <% else %>
