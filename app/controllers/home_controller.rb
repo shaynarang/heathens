@@ -22,4 +22,8 @@ class HomeController < ApplicationController
       format.js
     end
   end
+
+  def music
+    redirect_to 'http://www.hthns.bandcamp.com'
+  end
 end

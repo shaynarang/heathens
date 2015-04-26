@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get 'social', to: 'home#social'
   post 'create_message', to: 'messages#create'
   get 'filter_posts', to: 'posts#filter'
+  get 'music', to: 'home#music'
 end

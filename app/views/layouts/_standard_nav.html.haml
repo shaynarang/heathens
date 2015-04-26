@@ -2,9 +2,12 @@
   %ul
     - categories = ["bio", "words", "music", "videos", "social", "contact"]
     - categories.each do |category|
-      - if category != "social"
-        %li
-          = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true
-      - else
+      - if category == "social"
         %li
           = link_to "social", social_path, :id => "social_link", :remote => true
+      - elsif category == "music"
+        %li
+          = link_to "music", music_path, :id => "music_link", :target => "_blank"
+      - else
+        %li
+          = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true
