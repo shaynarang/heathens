@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     if category == "all"
       @posts = Post.order('created_at DESC').all
     else
-      @posts = Category.find(category).posts
+      @posts = Category.find(category).posts.order('created_at DESC')
     end
 
     respond_to do |format|
