@@ -17,7 +17,7 @@ class HomeController < ApplicationController
 
   def social
     social_post_fetcher = SocialPostFetcher.new
-    @social_posts = social_post_fetcher.fetch_posts
+    @social_posts = social_post_fetcher.fetch_posts.sort.reverse.to_h
     respond_to do |format|
       format.js
     end

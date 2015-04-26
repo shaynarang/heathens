@@ -1,11 +1,9 @@
 #social_content
   %ul#social_posts
     - @social_posts.each do |time, message|
-      - if message.size > 0
-        .col-md-12.col-sm-12.col-xs-12
-          %li
-            .col-md-2.col-sm-12.col-xs-12.social_post_time
-              - parsed_time = DateTime.parse(time)
-              = "#{parsed_time.strftime('%m.%d.%y')}"
-            .col-md-10.col-sm-12.col-xs-12.social_post_message
-              = "#{message}"
+      - if !message.nil? && message.size > 0
+        %li
+          .col-md-2.col-sm-12.col-xs-12.social_post_time
+            = "#{time.strftime('%m.%d.%y')}"
+          .col-md-10.col-sm-12.col-xs-12.social_post_message
+            = "#{message}"
