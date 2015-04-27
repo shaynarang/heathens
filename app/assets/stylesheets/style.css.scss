@@ -164,6 +164,33 @@ nav {
   }
 }
 
+a.facebook_link {
+  color: #2e4da7;
+}
+
+a.twitter_link {
+  color: #04aceb;
+}
+
+a.instagram_link {
+  color: #964b00;
+}
+
+#music_content {
+  ul {
+    padding-left: 0;
+
+    li {
+      padding: 0.5% 0;
+      list-style-type: none;
+
+      a {
+        font-weight: bold;
+      }
+    }
+  }
+}
+
 #social_content {
   img {
     height: 50%;

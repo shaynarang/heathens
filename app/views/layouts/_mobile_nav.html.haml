@@ -10,9 +10,6 @@
         - if category == "social"
           %li{:onclick => "toggleExpanded()"}
             = link_to "social", social_path, :id => "social_link", :remote => true
-        - elsif category == "music"
-          %li
-            = link_to "music", music_path, :id => "music_link", :target => "_blank"
         - else
           %li{:onclick => "toggleExpanded()"}
             = link_to "#{category}", display_content_path(:section => "#{category}"), :id => "#{category}_link", :remote => true

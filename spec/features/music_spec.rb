@@ -7,7 +7,11 @@ RSpec.describe "music" do
     find("#standard_nav > nav > ul > li > a#music_link").click
   end
     
-  it "redirects to the bandcamp page" do
-    expect(current_url).to eq("http://www.hthns.bandcamp.com/")
+  it "populates the content section with music content", :js => true do
+    content = "GRTST HTS will be available from a number of digital outlets. More information will be available soon. Hang out with HTHNS on social media to stay posted:"
+    expect(page).to have_content(content.upcase)
+    expect(page).to have_selector("li > a.facebook_link")
+    expect(page).to have_selector("li > a.twitter_link")
+    expect(page).to have_selector("li > a.instagram_link")
   end
 end
