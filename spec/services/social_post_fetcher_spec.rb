@@ -20,6 +20,12 @@ RSpec.describe "social post fetcher" do
       expect(post_data['created_time']).to_not be_nil
       expect(post_data['created_time']).to be_a(String)
       expect(post_data['created_time'].size).to be > 1
+
+      expect(post_data).to have_key('id')
+      expect(post_data['id']).to_not be_nil
+      expect(post_data['id']).to be_a(String)
+      expect(post_data['id'].size).to be > 1
+
       if post_data['message']
         expect(post_data['message']).to be_a(String)
         expect(post_data['message'].size).to be > 1
@@ -36,10 +42,13 @@ RSpec.describe "social post fetcher" do
     it { should be_a(Hash) }
     it { should_not be_empty }
 
-  it "contains date keys and message values" do
-    facebook_posts.each do |date, message|
+  it "contains date keys and post data values" do
+    facebook_posts.each do |date, post_data|
       expect(date).to be_a(DateTime)
-      expect(message).to be_a(String)
+      expect(post_data).to be_a(Array)
+      expect(post_data[0]).to be_a(String)
+      expect(post_data[1]).to be_a(String)
+      expect(post_data[2]).to be_a(String)
     end
   end
 
@@ -57,6 +66,10 @@ RSpec.describe "social post fetcher" do
     twitter_query.each do |post_data|
       expect(post_data.created_at).to_not be_nil
       expect(post_data.created_at).to be_a(Time)
+
+      expect(post_data.uri).to_not be_nil
+      expect(post_data.uri).to be_a(Addressable::URI)
+
       if post_data.text
         expect(post_data.text).to be_a(String)
         expect(post_data.text.size).to be > 1
@@ -73,10 +86,13 @@ RSpec.describe "social post fetcher" do
     it { should be_a(Hash) }
     it { should_not be_empty }
 
-  it "contains date keys and message values" do
-    twitter_posts.each do |date, message|
+  it "contains date keys and post data values" do
+    twitter_posts.each do |date, post_data|
       expect(date).to be_a(Time)
-      expect(message).to be_a(String)
+      expect(post_data).to be_a(Array)
+      expect(post_data[0]).to be_a(String)
+      expect(post_data[1]).to be_a(Addressable::URI)
+      expect(post_data[2]).to be_a(String)
     end
   end
 end

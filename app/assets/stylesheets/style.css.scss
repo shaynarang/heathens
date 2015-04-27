@@ -164,18 +164,6 @@ nav {
   }
 }
 
-a.facebook_link {
-  color: #2e4da7;
-}
-
-a.twitter_link {
-  color: #04aceb;
-}
-
-a.instagram_link {
-  color: #964b00;
-}
-
 #music_content {
   ul {
     padding-left: 0;
@@ -184,31 +172,61 @@ a.instagram_link {
       padding: 0.5% 0;
       list-style-type: none;
 
-      a {
-        font-weight: bold;
+      .social_icon {
+        text-align: left;
+        padding: 0;
+
+        img {
+          height: 30%;
+          width: 30%;
+        }
+      }
+
+      .social_link {
+        padding: 0;
+        margin: 0 0 0 -4%;
+
+        a {
+          font-weight: bold;
+          color: $magenta;
+        }
       }
     }
   }
 }
 
 #social_content {
-  img {
-    height: 50%;
+  .social_post_icon, .social_post_time, .social_post_message {
+    margin: 0.6% 0;
+  }
+
+  .social_post_icon {
+    img {
+      height: 40%;
+      width: 40%;
+      margin-left: 80%;
+    }
   }
 
   ul {
-    padding: 0;
+    list-style-type: none;
 
     li {
-      list-style-type: none;
       color: white;
-      padding: 1% 0;
+    }
+
+    a {
+      color: $magenta;
     }
   }
 
   .social_post_time {
-    color: $magenta;
-    text-align: right;
+    padding-right: 0;
+    margin-right: -7.5%;
+  }
+
+  .social_post_message {
+    padding: 0;
   }
 }
 
@@ -409,14 +427,36 @@ and (orientation : portrait) {
 
   #social_content {
     width: 80%;
+
+    .social_post_icon {
+      padding: 0;
+      margin: 0;
+
+      img {
+        margin: 0 0 0 -10%;
+        height: 30%;
+        width: 30%;
+      }
+    }
+
+    .social_post_time {
+      margin: 0 0 0 -14%;
+    }
+
+    .social_post_message {
+      margin-bottom: 3%;
+    }
   }
 
-  .social_post_time {
-    text-align: left !important;
-  }
+  #music_content {
+    .social_icon img {
+      width: 100%;
+      height: 100%;
+    }
 
-  .social_post_message {
-    margin-bottom: 3%;
+    .social_link a {
+      margin: 0 0 0 -5%;
+    }
   }
 
   #category_filter_links {
@@ -477,7 +517,6 @@ and (orientation : landscape) {
 
   nav {
     ul {
-
       li {
         margin-bottom: 10%;
 
@@ -499,6 +538,20 @@ and (orientation : landscape) {
 
   #categories a {
     padding-left: 3%;
+  }
+
+  .social_post_icon {
+    padding: 0;
+
+    img {
+      margin: 0 0 0 -20%;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .social_post_time {
+    margin-right: 0 !important;
   }
 }
 
@@ -585,13 +638,8 @@ and (orientation : landscape) {
     padding: 0;
   }
 
-  #social_content img {
-    height: 100% !important;
-  }
-
   #social_posts {
     padding: 0;
-    margin: 0;
 
     .social_post_time {
       padding: 0;
@@ -602,6 +650,25 @@ and (orientation : landscape) {
       font-size: 85%;
       padding: 0 0 5% 0;
     }
+
+    .social_post_icon {
+      padding: 0;
+
+      img {
+        margin: 0 0 0 -20%;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .social_icon img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .social_link a {
+    margin: 0 0 0 -5%;
   }
 
   .contact_row {

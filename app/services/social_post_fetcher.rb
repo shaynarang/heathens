@@ -32,10 +32,12 @@ class SocialPostFetcher
     collection = {}
     posts['data'].each do |post_data|
       next unless post_data['message'] && !post_data['message'].empty?
-      message = post_data['message'].gsub("\n", " ")
       time = post_data['created_time']
       time = DateTime.parse(time)
-      collection[time] = message
+      message = post_data['message'].gsub("\n", " ")
+      post_url = "http://www.facebook.com/#{post_data['id']}"
+      klass = "facebook_link"
+      collection[time] = [message, post_url, klass]
     end
     collection
   end
@@ -44,7 +46,8 @@ class SocialPostFetcher
     collection = {}
     posts.each do |post|
       next if post.text.nil?
-      collection[post.created_at] = post.text
+      klass = "twitter_link"
+      collection[post.created_at] = [post.text, post.uri, klass]
     end
     collection
   end
