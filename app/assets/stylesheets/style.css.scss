@@ -19,6 +19,16 @@ h1, p {
   color: $white;
 }
 
+
+#ajax_loader {
+  width: 100%;
+
+  img {
+    width: 20%;
+    margin: 25% 40%;
+  }
+}
+
 #heading_row {
   margin-top: 5%;
   img {
