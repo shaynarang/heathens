@@ -717,3 +717,19 @@ and (orientation : landscape) {
     line-height: 2px !important;
   }
 }
+
+@media (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  #music_content {
+    .social_icon {
+      display: none;
+    }
+
+    .social_link {
+      width: 100%;
+
+      a {
+        margin: 4% !important;
+      }
+    }
+  }
+}
