@@ -87,11 +87,55 @@ RSpec.describe "social post fetcher" do
     it { should_not be_empty }
 
   it "contains date keys and post data values" do
-    twitter_posts.each do |date, post_data|
-      expect(date).to be_a(Time)
+    twitter_posts.each do |time, post_data|
+      expect(time).to be_a(Time)
       expect(post_data).to be_a(Array)
       expect(post_data[0]).to be_a(String)
       expect(post_data[1]).to be_a(Addressable::URI)
+      expect(post_data[2]).to be_a(String)
+    end
+  end
+
+  let(:instagram_query) {
+    VCR.use_cassette('instagram_posts') do
+      social_post_fetcher.query_api('instagram')
+    end
+  }
+
+  subject { instagram_query }
+    it { should be_a(Hash) }
+    it { should_not be_empty }
+
+  it "contains values for target keys" do
+    instagram_query['data'].each do |post|
+      expect(post['created_time']).to_not be_nil
+      expect(post['created_time']).to be_a(String)
+
+      expect(post['link']).to_not be_nil
+      expect(post['link']).to be_a(String)
+
+      if post['caption']
+        expect(post['caption']['text']).to be_a(String)
+        expect(post['caption']['text'].size).to be > 1
+      end
+    end
+  end
+
+  let(:instagram_posts) {
+    posts = instagram_query
+    social_post_fetcher.parse_posts('instagram', posts)
+  }
+
+  subject { instagram_posts }
+    it { should be_a(Hash) }
+    it { should_not be_empty }
+
+  it "contains date keys and post data values" do
+    instagram_posts.each do |time, post_data|
+      expect(time).to be_a(Time)
+      expect(post_data).to be_a(Array)
+      expect(post_data[0]).to be_a(String)
+      expect(post_data[1]).to be_a(String)
       expect(post_data[2]).to be_a(String)
     end
   end

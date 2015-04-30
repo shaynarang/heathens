@@ -11,6 +11,8 @@
               = image_tag 'external_logos/facebook_icon.png'
             - elsif klass == "twitter_link"
               = image_tag 'external_logos/twitter_icon.png'
+            - elsif klass == "instagram_link"
+              = image_tag 'external_logos/instagram_icon.png'
           .col-md-3.col-sm-10.col-xs-11.social_post_time
             = link_to url, :target => "_blank" do
               - "#{time.strftime("%d %b %y")}"

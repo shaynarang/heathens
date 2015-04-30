@@ -9,4 +9,5 @@ VCR.configure do |config|
   config.filter_sensitive_data('<TWITTER_CONSUMER_SECRET>') { ENV['TWITTER_CONSUMER_SECRET'] }
   config.filter_sensitive_data('<TWITTER_ACCESS_TOKEN>') { ENV['TWITTER_ACCESS_TOKEN'] }
   config.filter_sensitive_data('<TWITTER_ACCESS_SECRET>') { ENV['TWITTER_ACCESS_SECRET'] }
+  config.filter_sensitive_data('<INSTAGRAM_CLIENT_ID>') { ENV['INSTAGRAM_CLIENT_ID'] }
 end

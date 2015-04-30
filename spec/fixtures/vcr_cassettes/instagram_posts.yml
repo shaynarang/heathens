@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/users/1641346011/media/recent/?client_id=<INSTAGRAM_CLIENT_ID>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Thu, 30 Apr 2015 03:38:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ratelimit-Remaining:
+      - '4998'
+      Content-Language:
+      - en
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      X-Ratelimit-Limit:
+      - '5000'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Set-Cookie:
+      - csrftoken=bc2effe9de1da714681dd9ad05d07f7e; expires=Thu, 28-Apr-2016 03:38:27
+        GMT; Max-Age=31449600; Path=/
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '636'
+    body:
+      encoding: UTF-8
+      string: '{"pagination":{},"meta":{"code":200},"data":[{"attribution":null,"tags":[],"location":null,"comments":{"count":0,"data":[]},"filter":"Lo-fi","created_time":"1421090792","link":"https:\/\/instagram.com\/p\/xw_0V1D9Ff\/","likes":{"count":0,"data":[]},"images":{"low_resolution":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10860222_1544847759120421_275677358_n.jpg","width":306,"height":306},"thumbnail":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10860222_1544847759120421_275677358_n.jpg","width":150,"height":150},"standard_resolution":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10860222_1544847759120421_275677358_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1421090792","text":"Home
+        cooking.","from":{"username":"shaynarang","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/anonymousUser.jpg","id":"1641346011","full_name":"Shay
+        Narang"},"id":"896497000157008414"},"type":"image","id":"896496999628525919_1641346011","user":{"username":"shaynarang","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/anonymousUser.jpg","id":"1641346011","full_name":"Shay
+        Narang"}},{"attribution":null,"tags":[],"location":null,"comments":{"count":0,"data":[]},"filter":"Mayfair","created_time":"1420735946","link":"https:\/\/instagram.com\/p\/xmbAN2D9CG\/","likes":{"count":1,"data":[{"username":"shaynarang","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/anonymousUser.jpg","id":"1641346011","full_name":"Shay
+        Narang"}]},"images":{"low_resolution":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s306x306\/e15\/10919124_770877699655246_1043434869_n.jpg","width":306,"height":306},"thumbnail":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/s150x150\/e15\/10919124_770877699655246_1043434869_n.jpg","width":150,"height":150},"standard_resolution":{"url":"https:\/\/scontent.cdninstagram.com\/hphotos-xaf1\/t51.2885-15\/e15\/10919124_770877699655246_1043434869_n.jpg","width":640,"height":640}},"users_in_photo":[],"caption":{"created_time":"1420735946","text":"Virginia
+        skies.","from":{"username":"shaynarang","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/anonymousUser.jpg","id":"1641346011","full_name":"Shay
+        Narang"},"id":"893520338721165555"},"type":"image","id":"893520338201071750_1641346011","user":{"username":"shaynarang","profile_picture":"https:\/\/instagramimages-a.akamaihd.net\/profiles\/anonymousUser.jpg","id":"1641346011","full_name":"Shay
+        Narang"}}]}'
+    http_version: 
+  recorded_at: Thu, 30 Apr 2015 03:36:35 GMT
+recorded_with: VCR 2.9.3

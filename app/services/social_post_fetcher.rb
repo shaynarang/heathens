@@ -16,6 +16,9 @@ class SocialPostFetcher
       JSON.load(open(endpoint))
     when 'twitter'
       twitter_client.user_timeline('shaynarang')
+    when 'instagram'
+      endpoint = "https://api.instagram.com/v1/users/1641346011/media/recent/?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}"
+      JSON.load(open(endpoint))
     end
   end
 
@@ -25,6 +28,8 @@ class SocialPostFetcher
       parse_facebook_posts(posts)
     when 'twitter'
       parse_twitter_posts(posts)
+    when 'instagram'
+      parse_instagram_posts(posts)
     end
   end
 
@@ -52,13 +57,29 @@ class SocialPostFetcher
     collection
   end
 
+  def parse_instagram_posts posts
+    collection = {}
+    posts['data'].each do |post|
+      caption = post['caption']
+      next unless caption['text'] && !caption['text'].empty?
+      klass = "instagram_link"
+      time = post['created_time']
+      time = Time.at(time.to_i)
+      collection[time] = [caption['text'], post['link'], klass]
+    end
+    collection
+  end
+
   def posts network
     posts = query_api(network)
     parse_posts(network, posts)
   end
 
   def fetch_posts
-    posts('facebook').merge(posts('twitter'))
+    facebook_posts = posts('facebook')
+    twitter_posts = posts('twitter')
+    instagram_posts = posts('instagram')
+    facebook_posts.merge(twitter_posts).merge(instagram_posts)
   end
 
 end
