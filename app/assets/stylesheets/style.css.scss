@@ -152,6 +152,7 @@ nav {
   border-top: 1px dotted white;
   padding: 2%;
   cursor: pointer;
+  margin-right: 50px;
 
   .post_heading {
     text-align: center;
@@ -188,8 +189,8 @@ nav {
         padding: 0;
 
         img {
-          height: 30%;
-          width: 30%;
+          height: 20px;
+          width: 20px;
         }
       }
 
@@ -213,8 +214,8 @@ nav {
 
   .social_post_icon {
     img {
-      height: 40%;
-      width: 40%;
+      height: 20px;
+      width: 20px;
       margin-left: 80%;
     }
   }
@@ -244,11 +245,12 @@ nav {
 #contact_form {
   input, #message_content {
     width: 100%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
     height: 40px;
     text-transform: uppercase;
     letter-spacing: 3px;
     border-radius: 0px;
+    margin-right: 50px;
   }
 
   input:focus, #message_content:focus {
