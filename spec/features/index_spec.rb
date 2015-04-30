@@ -15,7 +15,7 @@ RSpec.describe "index" do
     expect(page).to have_selector("li > a#contact_link")
   end
 
-  it "displays an audio player" do
+  it "displays an audio player", :on_hold=>true do
     expect(page).to have_selector("div#audio_player")
     expect(page).to have_selector("div#audio_controls > div#next")
     expect(page).to have_selector("div#audio_controls > div#play_circle")
@@ -23,7 +23,7 @@ RSpec.describe "index" do
     expect(page).to have_selector("#my-jplayer.jp-jplayer")
   end
 
-  it "displays the current song", :js => true do
+  it "displays the current song", :on_hold=>true, :js => true do
     expect(page).to have_selector("#now-playing")
     expect(page).to have_content("NOW PLAYING:")
   end
