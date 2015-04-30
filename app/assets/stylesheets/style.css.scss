@@ -629,6 +629,12 @@ and (orientation : landscape) {
 
   #category_filter_links {
     padding: 0;
+    margin-bottom: 5%;
+
+    a {
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
   }
 
   .post {
