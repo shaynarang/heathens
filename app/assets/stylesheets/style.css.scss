@@ -719,3 +719,12 @@ and (orientation : landscape) {
     line-height: 2px !important;
   }
 }
+
+@media (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
+  #heading_row {
+    #hthns_bar img, #hthns_word img {
+      width: 540px;
+      height: auto;
+    }
+  }
+}
