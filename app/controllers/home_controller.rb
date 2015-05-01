@@ -16,7 +16,7 @@ class HomeController < ApplicationController
   end
 
   def social
-    @social_posts = SocialPostFetcher.fetch_posts.sort.reverse.to_h
+    @social_posts = SocialPost.order('posted_at desc')
     respond_to do |format|
       format.js
     end

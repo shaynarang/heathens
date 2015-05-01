@@ -1,20 +1,16 @@
 #social_content
   %ul#social_posts
-    - @social_posts.each do |time, post_data|
-      - if !post_data.nil? && post_data.size > 0
-        - message = post_data[0]
-        - url = post_data[1].to_s
-        - klass = post_data[2]
-        %li
-          .col-md-1.col-sm-2.col-xs-1.social_post_icon
-            - if klass == "facebook_link"
-              = image_tag 'external_logos/facebook_icon.png'
-            - elsif klass == "twitter_link"
-              = image_tag 'external_logos/twitter_icon.png'
-            - elsif klass == "instagram_link"
-              = image_tag 'external_logos/instagram_icon.png'
-          .col-md-3.col-sm-10.col-xs-11.social_post_time
-            = link_to url, :target => "_blank" do
-              - "#{time.strftime("%d %b %y")}"
-          .col-md-8.col-sm-12.col-xs-12.social_post_message
-            = message
+    - @social_posts.each do |post|
+      %li
+        .col-md-1.col-sm-2.col-xs-1.social_post_icon
+          - if post.network == "facebook"
+            = image_tag 'external_logos/facebook_icon.png'
+          - elsif post.network == "twitter"
+            = image_tag 'external_logos/twitter_icon.png'
+          - elsif post.network == "instagram"
+            = image_tag 'external_logos/instagram_icon.png'
+        .col-md-3.col-sm-10.col-xs-11.social_post_time
+          = link_to post.url, :target => "_blank" do
+            - "#{post.posted_at.strftime("%d %b %y")}"
+        .col-md-8.col-sm-12.col-xs-12.social_post_message
+          = post.text

@@ -23,64 +23,70 @@ class SocialPostFetcher
       end
     end
 
-    def parse_posts network, posts
-      case network
-      when 'facebook'
-        parse_facebook_posts(posts)
-      when 'twitter'
-        parse_twitter_posts(posts)
-      when 'instagram'
-        parse_instagram_posts(posts)
+    def save_post post_data
+      url = post_data[:url]
+      posted_at = post_data[:posted_at]
+      text = post_data[:text]
+      network = post_data[:network]
+      unless SocialPost.find_by_url(post_data[:url])
+        SocialPost.create(posted_at: posted_at, text: text, url: url, network: network)
       end
     end
 
-    def parse_facebook_posts posts
-      collection = {}
-      posts['data'].each do |post_data|
-        next unless post_data['message'] && !post_data['message'].empty?
-        time = post_data['created_time']
-        time = DateTime.parse(time)
-        message = post_data['message'].gsub("\n", " ")
-        post_url = "http://www.facebook.com/#{post_data['id']}"
-        klass = "facebook_link"
-        collection[time] = [message, post_url, klass]
-      end
-      collection
+    def parse_facebook_post post
+      return unless post['message'] && !post['message'].empty?
+      post_data = {}
+      time = post['created_time']
+      post_data[:posted_at] = DateTime.parse(time)
+      post_data[:text] = post['message'].gsub("\n", " ")
+      post_data[:url] = "http://www.facebook.com/#{post['id']}"
+      post_data[:network] = "facebook"
+      post_data
     end
 
-    def parse_twitter_posts posts
-      collection = {}
+    def parse_twitter_post post
+      return if post.text.nil?
+      post_data = {}
+      post_data[:posted_at] = post.created_at
+      post_data[:text] = post.text
+      post_data[:url] = post.uri.to_s
+      post_data[:network] = "twitter"
+      post_data
+    end
+
+    def parse_instagram_post post
+      caption = post['caption']
+      return unless caption['text'] && !caption['text'].empty?
+      post_data = {}
+      time = post['created_time']
+      post_data[:posted_at] = Time.at(time.to_i)
+      post_data[:text] = caption['text']
+      post_data[:network] = "instagram"
+      post_data[:url] = post['link']
+      post_data
+    end
+
+    def save_posts posts, network
+      posts = posts['data'] unless network == 'twitter'
       posts.each do |post|
-        next if post.text.nil?
-        klass = "twitter_link"
-        collection[post.created_at] = [post.text, post.uri, klass]
+        case network
+        when 'facebook'
+          post_data = parse_facebook_post(post)
+        when 'twitter'
+          post_data = parse_twitter_post(post)
+        when 'instagram'
+          post_data = parse_instagram_post(post)
+        end
+        save_post(post_data) if !post_data.nil?
       end
-      collection
-    end
-
-    def parse_instagram_posts posts
-      collection = {}
-      posts['data'].each do |post|
-        caption = post['caption']
-        next unless caption['text'] && !caption['text'].empty?
-        klass = "instagram_link"
-        time = post['created_time']
-        time = Time.at(time.to_i)
-        collection[time] = [caption['text'], post['link'], klass]
-      end
-      collection
-    end
-
-    def posts network
-      posts = query_api(network)
-      parse_posts(network, posts)
     end
 
     def fetch_posts
-      facebook_posts = posts('facebook')
-      twitter_posts = posts('twitter')
-      instagram_posts = posts('instagram')
-      facebook_posts.merge(twitter_posts).merge(instagram_posts)
+      networks = ['facebook', 'twitter', 'instagram']
+      networks.each do |network|
+        posts = query_api(network)
+        save_posts(posts, network)
+      end
     end
   end
 
