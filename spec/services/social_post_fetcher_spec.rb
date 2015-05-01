@@ -2,11 +2,9 @@ require 'rails_helper'
 
 RSpec.describe "social post fetcher" do
 
-  let(:social_post_fetcher) { SocialPostFetcher.new }
-
   let(:facebook_query) {
     VCR.use_cassette('facebook_posts') do
-      social_post_fetcher.query_api('facebook')
+      SocialPostFetcher.query_api('facebook')
     end
   }
 
@@ -35,7 +33,7 @@ RSpec.describe "social post fetcher" do
 
   let(:facebook_posts) {
     posts = facebook_query
-    social_post_fetcher.parse_posts('facebook', posts)
+    SocialPostFetcher.parse_posts('facebook', posts)
   }
 
   subject { facebook_posts }
@@ -54,7 +52,7 @@ RSpec.describe "social post fetcher" do
 
   let(:twitter_query) {
     VCR.use_cassette('twitter_posts') do
-      social_post_fetcher.query_api('twitter')
+      SocialPostFetcher.query_api('twitter')
     end
   }
 
@@ -79,7 +77,7 @@ RSpec.describe "social post fetcher" do
 
   let(:twitter_posts) {
     posts = twitter_query
-    social_post_fetcher.parse_posts('twitter', posts)
+    SocialPostFetcher.parse_posts('twitter', posts)
   }
 
   subject { twitter_posts }
@@ -98,7 +96,7 @@ RSpec.describe "social post fetcher" do
 
   let(:instagram_query) {
     VCR.use_cassette('instagram_posts') do
-      social_post_fetcher.query_api('instagram')
+      SocialPostFetcher.query_api('instagram')
     end
   }
 
@@ -123,7 +121,7 @@ RSpec.describe "social post fetcher" do
 
   let(:instagram_posts) {
     posts = instagram_query
-    social_post_fetcher.parse_posts('instagram', posts)
+    SocialPostFetcher.parse_posts('instagram', posts)
   }
 
   subject { instagram_posts }
