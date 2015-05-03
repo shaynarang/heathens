@@ -15,10 +15,10 @@
     #mobile_nav
       = render 'layouts/mobile_nav'
 
-  .col-md-8.col-sm-8.col-xs-12
+  .col-md-9.col-sm-8.col-xs-12
     #ajax_loader
       = image_tag 'external_logos/ajax_loader.gif'
-    #content
+    #content.container-full
       = render 'words'
 
 .row#audio_row{style: 'display: none;'}

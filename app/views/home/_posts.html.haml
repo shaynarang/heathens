@@ -9,4 +9,4 @@
         = post.author
     .col-md-12.col-sm-12.col-xs-12.post_body
       .post_content{id: "#{post.title.gsub(/\s+/, "")}"}
-        = post.content
+        = post.content.html_safe

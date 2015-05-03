@@ -30,7 +30,9 @@ h1, p {
 }
 
 #heading_row {
-  margin-top: 5%;
+  margin-top: 6%;
+  width: 100%;
+
   img {
     width: 100%;
     height: 111px;
@@ -57,18 +59,14 @@ h1, p {
 }
 
 #content {
-  padding-right: 9%;
   margin-top: 5%;
+  padding-right: 11.5%;
   line-height: 2.5;
   letter-spacing: 6px;
   position: fixed;
   height: 66%;
   overflow: auto;
-
-  img {
-    width: 100%;
-    height: 538px;
-  }
+  overflow-x: hidden;
 }
 
 #jquery_jplayer_1.jp-jplayer {
@@ -77,8 +75,8 @@ h1, p {
 }
 
 #nav_column {
+  padding-left: 6%;
   margin-top: 5%;
-  padding-left: 6.5%;
 }
 
 nav {
@@ -150,7 +148,7 @@ nav {
 
 .post {
   border-top: 1px dotted white;
-  padding: 2%;
+  padding: 2% 0;
   cursor: pointer;
   margin-right: 50px;
 
@@ -164,6 +162,11 @@ nav {
     margin-top: 2%;
     color: white;
     font-size: 90%;
+
+    a {
+      font-weight: bold;
+      color: $magenta;
+    }
   }
 
   .post_time {
@@ -210,13 +213,13 @@ nav {
 #social_content {
   .social_post_icon, .social_post_time, .social_post_message {
     margin: 0.6% 0;
+    padding: 0;
   }
 
   .social_post_icon {
     img {
       height: 20px;
       width: 20px;
-      margin-left: 80%;
     }
   }
 
@@ -224,6 +227,7 @@ nav {
     list-style-type: none;
 
     li {
+      padding: 0;
       color: white;
     }
 
@@ -231,15 +235,10 @@ nav {
       color: $magenta;
     }
   }
+}
 
-  .social_post_time {
-    padding-right: 0;
-    margin-right: -7.5%;
-  }
-
-  .social_post_message {
-    padding: 0;
-  }
+.contact_row {
+  padding: 0;
 }
 
 #contact_form {
@@ -250,7 +249,6 @@ nav {
     text-transform: uppercase;
     letter-spacing: 3px;
     border-radius: 0px;
-    margin-right: 50px;
   }
 
   input:focus, #message_content:focus {
@@ -285,8 +283,6 @@ nav {
   }
 
   .field {
-    width: 102%;
-
     .contact_form_error {
       color: $magenta !important;
     }
@@ -379,6 +375,10 @@ nav {
   border-right: 16px solid $white;
 }
 
+.container-full {
+  width: inherit;
+}
+
 #categories {
   margin-bottom: 3%;
   padding: 1% 0 0 2%;
@@ -399,10 +399,10 @@ and (max-device-width : 1024px)
 and (orientation : portrait) {
 
   #heading_row {
-    margin-top: 7.5%;
+    margin-top: 12.5%;
 
     img {
-      height: 100px;
+      height: 90px;
     }
 
     #hthns_bar img {
@@ -423,8 +423,10 @@ and (orientation : portrait) {
 
   nav {
     ul {
+      padding-left: 5%;
+
       li {
-        margin-bottom: 15%;
+        margin-bottom: 20%;
 
         a {
           font-size: 125%;
@@ -434,13 +436,11 @@ and (orientation : portrait) {
   }
 
   #content {
-    height: 60%;
-    padding: 0 5%;
+    height: 70%;
+    padding: 0 0 0 10%;
   }
 
   #social_content {
-    width: 80%;
-
     .social_post_icon {
       padding: 0;
       margin: 0;
@@ -453,7 +453,7 @@ and (orientation : portrait) {
     }
 
     .social_post_time {
-      margin: 0 0 0 -14%;
+      margin: 0 0 0 -10%;
     }
 
     .social_post_message {
@@ -523,13 +523,21 @@ and (max-device-width : 1024px)
 and (orientation : landscape) {
 
   #heading_row {
+    margin-top: 7.5%;
+
     #hthns_bar img, #hthns_word img {
       height: 80px;
     }
   }
 
+  #nav_and_content_row {
+    margin-top: 2%;
+  }
+
   nav {
     ul {
+      padding-left: 2%;
+
       li {
         margin-bottom: 10%;
 
@@ -553,18 +561,8 @@ and (orientation : landscape) {
     padding-left: 3%;
   }
 
-  .social_post_icon {
-    padding: 0;
-
-    img {
-      margin: 0 0 0 -20%;
-      height: 100%;
-      width: 100%;
-    }
-  }
-
-  .social_post_time {
-    margin-right: 0 !important;
+  #content {
+    padding: 0 13% 0 2%;
   }
 }
 
@@ -573,10 +571,14 @@ and (orientation : landscape) {
     display: none;
   }
 
-  #hthns_word, #mobile_nav {
+  #mobile_nav {
     display: block;
     padding: 4%;
     text-align: center;
+  }
+
+  #hthns_word {
+    padding: 6% 0 0 6%;
   }
 
   #standard_nav {
@@ -617,6 +619,10 @@ and (orientation : landscape) {
 
   .fancybox {
     pointer-events: none;
+  }
+
+  #categories {
+    padding: 0;
   }
 
   .category_link_column {
@@ -729,8 +735,29 @@ and (orientation : landscape) {
 @media (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
   #heading_row {
     #hthns_bar img, #hthns_word img {
-      width: 540px;
+      width: 100%;
       height: auto;
+    }
+  }
+
+  .social_post_icon {
+    img {
+      width: 20px !important;
+      height: 20px !important;
+    }
+  }
+
+  #categories {
+    margin: 0;
+  }
+
+  #category_filter_links {
+    margin-bottom: 5%;
+    padding: 2% 2% 2% 0;
+
+    a {
+      font-size: 14px;
+      letter-spacing: 6px;
     }
   }
 }
