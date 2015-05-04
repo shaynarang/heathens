@@ -8,7 +8,7 @@ RSpec.describe "music" do
   end
     
   it "populates the content section with music content", :js => true do
-    content = "GRTST HTS will be available from a number of digital outlets. More information will be available soon. Hang out with HTHNS on social media to stay posted:"
+    content = "GRTST HTS will soon be available at a number of digital outlets. Hang out with HTHNS on social media to stay posted:"
     expect(page).to have_content(content.upcase)
     expect(page).to have_selector("a.facebook_link")
     expect(page).to have_selector("a.twitter_link")

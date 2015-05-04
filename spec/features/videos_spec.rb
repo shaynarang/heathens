@@ -8,7 +8,6 @@ RSpec.describe "videos" do
   end
     
   it "populates the content section with videos content", :js => true do
-    content = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis dignissim nunc. Phasellus tempor mi ac augue cursus, et mollis purus facilisis. Nunc lobortis sagittis hendrerit. Nam id luctus tellus. Nulla pharetra nec risus ut condimentum. Ut interdum leo eu orci sagittis lacinia. Nulla vitae nisl id dui laoreet convallis."
-    expect(page).to have_content(content.upcase)
+    expect(page).to have_selector('.video')
   end
 end

@@ -46,7 +46,6 @@ h1, p {
 .navbar-fixed-bottom {
   padding: 1.1%;
   border-top: 1px solid $white !important;
-
 }
 
 #audio_row {
@@ -144,6 +143,10 @@ nav {
 
 #fancybox-img {
   border: none;
+}
+
+.video iframe {
+  height: 300px;
 }
 
 .post {
@@ -440,6 +443,14 @@ and (orientation : portrait) {
     padding: 0 0 0 10%;
   }
 
+  .video {
+    margin-bottom: 5%;
+
+    iframe {
+      height: 200px;
+    }
+  }
+
   #social_content {
     .social_post_icon {
       padding: 0;
@@ -563,6 +574,14 @@ and (orientation : landscape) {
 
   #content {
     padding: 0 13% 0 2%;
+  }
+
+  .video {
+    margin-bottom: 5%;
+
+    iframe {
+      height: 200px;
+    }
   }
 }
 
@@ -698,6 +717,15 @@ and (orientation : landscape) {
 
   .contact_row {
     padding: 0;
+  }
+
+  .video {
+    padding: 0;
+    margin-bottom: 5%;
+
+    iframe {
+      height: 200px;
+    }
   }
 
   #contact_form {
