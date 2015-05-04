@@ -7,7 +7,8 @@ module ApplicationHelper
       .gsub('/v/', '/embed/')
       .gsub('watch?v=', 'embed/')
       .gsub('autoplay=1', '')
-      .concat('?autoplay=0&showinfo=0&controls=0')
+      .concat('?rel=0')
+      .concat('&autoplay=0&showinfo=0&controls=0')
       .concat('&enablejsapi=1')
   end
 end

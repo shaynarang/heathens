@@ -145,8 +145,15 @@ nav {
   border: none;
 }
 
-.video iframe {
-  height: 300px;
+.video {
+  iframe {
+    height: 300px;
+  }
+
+  .video_title {
+    font-size: 70%;
+    text-align: center;
+  }
 }
 
 .post {

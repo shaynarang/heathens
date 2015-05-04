@@ -1,8 +1,9 @@
 #videos_content
-  - urls = ["https://www.youtube.com/watch?v=e4il4PmR8gs", "https://www.youtube.com/watch?v=GTEf90VD46o", "https://www.youtube.com/watch?v=kaWoF0Iy8a4"]
-  - urls.each do |url|
+  - video_data = [["Caught in a Memory (Promo)", "https://www.youtube.com/watch?v=e4il4PmR8gs"]]
+  - video_data.each do |title, url|
     .col-md-4.col-sm-12.col-xs-12.video
       %iframe{:allowfullscreen => true, :frameborder => "0", :src => updated_youtube_url(url), :width => "100%"}
+      %p.video_title= title
 
 :javascript
 
