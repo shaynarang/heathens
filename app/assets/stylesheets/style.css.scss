@@ -219,6 +219,10 @@ nav {
     padding: 0;
   }
 
+  .social_post_time {
+    padding-left: 3%;
+  }
+
   .social_post_icon {
     img {
       height: 20px;
@@ -581,6 +585,12 @@ and (orientation : landscape) {
 
     iframe {
       height: 200px;
+    }
+  }
+
+  #social_content {
+    .social_post_time {
+      padding-left: 0 !important;
     }
   }
 }
