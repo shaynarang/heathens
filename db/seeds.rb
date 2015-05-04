@@ -8,10 +8,6 @@
 #   promo_gallery.images.create(content: promo_image) unless Image.find_by_content(file_name)
 # end
 
-Category.destroy_all
-
-Post.destroy_all
-
 categories = [
   {name: "News"},
   {name: "Review"},
@@ -24,7 +20,7 @@ posts = [
 ]
 
 categories.each do |category|
-  Category.create(category)
+  Category.create(category) unless Category.find_by_name(category[:name])
 end
 
 posts.each do |post|
@@ -33,5 +29,7 @@ posts.each do |post|
   title = post[:title]
   category = post[:category]
   category = Category.where(name: category).first
-  category.posts << Post.create(author: author, content: content, title: title)
+  unless Post.find_by_content(content)
+    category.posts << Post.create(author: author, content: content, title: title)
+  end
 end
