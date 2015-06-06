@@ -17,10 +17,10 @@ $ ->
   highlight $("a#words_link")
     
   $("#standard_nav nav ul li a").click ->
-    highlight this
+    highlight this unless this.id == 'music_link'
 
   $("#mobile_nav nav #expanded ul li a").click ->
-    highlight this
+    highlight this unless this.id == 'music_link'
 
   $("#heading_row").click ->
     highlight $("a#words_link")
