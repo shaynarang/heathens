@@ -191,6 +191,10 @@ nav {
   }
 }
 
+.post:last-child {
+  margin-bottom: 6%;
+}
+
 #social_content {
   .social_post_icon, .social_post_time, .social_post_message {
     margin: 0.6% 0;
@@ -220,6 +224,10 @@ nav {
       color: $magenta;
     }
   }
+
+  ul:last-child {
+    margin-bottom: 6%;
+  }
 }
 
 .contact_row {
@@ -243,12 +251,12 @@ nav {
   }
 
   #message_content {
-    height: 200px;
+    height: 125px;
   }
 
   .actions {
     width: 20%;
-    margin: 0 auto;
+    margin: 0 auto 6% auto;
 
     input {
       border: 1px solid $darker-magenta;
