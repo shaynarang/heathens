@@ -222,13 +222,13 @@ nav {
 
     a {
       color: $magenta;
+
     }
   }
-
 }
 
-#social_posts:last-child {
-  margin-bottom: 6%;
+.social_post:last-of-type {
+  margin-bottom: 8%;
 }
 
 .contact_row {

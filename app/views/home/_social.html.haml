@@ -1,7 +1,7 @@
 #social_content
   %ul#social_posts
     - @social_posts.each do |post|
-      %li
+      %li.social_post.col-md-12.col-sm-12.col-xs-12
         .col-md-1.col-sm-2.col-xs-1.social_post_icon
           - if post.network == "facebook"
             = image_tag 'external_logos/facebook_icon.png'
