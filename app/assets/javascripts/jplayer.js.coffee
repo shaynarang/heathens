@@ -1,7 +1,8 @@
 $ ->
   media = [
-    "https://s3-us-west-2.amazonaws.com/heathens-assets/uploads/Staring_at_the_Gun.wav",
-    "https://s3-us-west-2.amazonaws.com/heathens-assets/uploads/Caught_in_a_Memory.wav"
+    "https://s3-us-west-2.amazonaws.com/heathens-assets/uploads/Free_and_Godless_Man.wav",
+    "https://s3-us-west-2.amazonaws.com/heathens-assets/uploads/Caught_in_a_Memory.wav",
+    "https://s3-us-west-2.amazonaws.com/heathens-assets/uploads/Staring_at_the_Gun.wav"
   ]
 
   currentSong = media[0]
