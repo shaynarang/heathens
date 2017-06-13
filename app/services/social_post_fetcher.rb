@@ -13,7 +13,7 @@ class SocialPostFetcher
     def query_api network
       case network
       when 'facebook'
-        endpoint = "https://graph.facebook.com/v2.3/790511054367668/posts?access_token=#{ENV['FACEBOOK_APP_ID']}%7C#{ENV['FACEBOOK_SECRET']}"
+        endpoint = "https://graph.facebook.com/v2.9/790511054367668/posts?access_token=#{ENV['FACEBOOK_APP_ID']}%7C#{ENV['FACEBOOK_SECRET']}"
         JSON.load(open(endpoint))
       when 'twitter'
         twitter_client.user_timeline('hthnsmusic')
